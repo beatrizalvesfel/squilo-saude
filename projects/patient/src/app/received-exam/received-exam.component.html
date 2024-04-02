@@ -1,0 +1,12 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<body class="container-page">
+    <div class="exam-view-topbar">
+        <button class="btn" routerLink="/main">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+    </div>
+    <app-received-exam-pdf [userID]="userID" [examID]="data.examID"></app-received-exam-pdf>
+</body>

@@ -1,0 +1,144 @@
+body {
+    background-color: #f9f9f9;
+}
+
+.container-page {
+    background: rgb(126, 17, 119);
+    background: -moz-linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+    background: -webkit-linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+    background: linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#7e1177", endColorstr="#061176", GradientType=1);
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+    height: 100%;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.description {
+    text-align: start;
+    max-width: 440px;
+    color: #f9f9f9;
+}
+
+.title {
+    color: #f9f9f9;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 120%;
+    margin: 0.6rem 0;
+}
+
+p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+p:first-child {
+    margin-bottom: 0.5rem;
+}
+
+b {
+    margin-left: 0.1rem;
+}
+
+.email {
+    color: white;
+}
+
+.monitoring {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.monitoringItem {
+    align-items: center;
+    display: flex;
+}
+
+.monitoringItens {
+    background-color: #f9f9f9;
+    color: #7e1177;
+    padding: 0.5rem;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.monitoringTitle {
+    margin: 0 0.3rem;
+}
+
+.tester {
+    display: flex;
+    align-items: center;
+}
+
+.monitoringItens {
+    cursor: pointer;
+}
+
+@media (max-width:1200px) {
+    .container-page {
+        flex-direction: column;
+    }
+    .tester {
+        width: 100%;
+        justify-content: center;
+    }
+    .monitoring {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-top: 2rem;
+    }
+    .description {
+        max-width: fit-content;
+    }
+}
+
+@media (max-width:1000px) {
+    .tester {
+        flex-direction: column;
+        align-items: center;
+    }
+    .imgDiv {
+        margin: 0px 0px 1rem 0px;
+    }
+    .description {
+        text-align: center;
+    }
+    .monitoring {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+}
+
+@media (max-width:580px) {
+    .monitoring {
+        grid-template-columns: 1fr;
+    }
+    .monitoringItem {
+        display: flex;
+    }
+    .monitoringItens {
+        flex-direction: column;
+    }
+    .monitoringTitle {
+        text-align: center;
+    }
+}
+
+@media (max-width:380px) {
+    .monitoringItem {
+        flex-direction: column;
+    }
+}

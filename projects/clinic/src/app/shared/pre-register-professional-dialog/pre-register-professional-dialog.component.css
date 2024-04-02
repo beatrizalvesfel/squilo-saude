@@ -1,0 +1,59 @@
+.mat-dialog-container {
+    background-color: #7e1177 !important;
+}
+
+.preRegister-title {
+    color: #f9f9f9;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.preRegister-form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.preRegister-form-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+label {
+    color: #f9f9f9;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
+
+.preRegisterInput {
+    padding-left: 1rem;
+    color: #7e1177;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+.preRegister-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 100%;
+    padding: 2% 8% !important;
+}
+
+@media (max-width:880px) {
+    .container {
+        padding: 0rem;
+    }
+    .preRegister-form {
+        width: 100%;
+    }
+}

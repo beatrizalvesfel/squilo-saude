@@ -1,0 +1,16 @@
+<body class="container-page">
+    <div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+        <mat-spinner mode="indeterminate"></mat-spinner>
+    </div>
+    <div class="container">
+        <span class="tinyMce-placeholder">Insira o código de verificação para excluir a conta</span>
+        <p>O código foi enviado para o email informado no cadastro</p>
+        <div id="form">
+            <input type="text" maxLength="4" size="4" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="code1" />
+            <button (click)="deleteAccount()" class="button-primary btn" id="r3c2m6i11" name="submit" type="submit" value="Verificar">Deletar conta</button>
+        </div>
+        <!-- <div class="bee-block bee-block-7 bee-paragraph">
+          <a routerLink="/">Não recebi o código / reenviar</a>
+      </div> -->
+    </div>
+</body>

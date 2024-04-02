@@ -1,0 +1,45 @@
+<body class="container-page">
+    <div class="container">
+        <section class="comingSoon">
+            <div class="comingSoonText">
+                <span class="comingSoonSpan">Estamos trabalhando nisso</span>
+                <h2 class="comingSoonTitle">Menu em desenvolvimento!</h2>
+                <span class="comingSoonFill">
+          </span>
+            </div>
+            <div class="comingSoonForm">
+                <span>Qual o seu <b>interesse</b> em desenvolvermos este menu?🤔</span>
+                <form accept-charset="UTF-8" (ngSubmit)="onSubmit()" [formGroup]="RankForm" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+                    <div class="comingSoonFormRow">
+                        <div class="starRating">
+                            <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false" formControlName="rating"></ngb-rating>
+                            <p>{{starRating}} / 5</p>
+                        </div>
+                    </div>
+                    <div class="comingSoonFormRow">
+                        <label class="select" for="feature">Selecione o menu desejado:</label>
+                        <mat-form-field>
+                            <mat-select formControlName="rankFeature" [(value)]="selectedValue">
+                                <mat-option value="Agenda">Agenda</mat-option>
+                                <mat-option value="Medicacoes">Medicações</mat-option>
+                                <mat-option value="Vacinacao">Vacinação</mat-option>
+                                <mat-option value="Cirurgias">Cirurgias</mat-option>
+                                <mat-option value="Atestados">Atestados/Laudos</mat-option>
+                                <mat-option value="Receitas">Receitas</mat-option>
+                                <mat-option value="Anotacoes">Anotações</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="comingSoonFormRow">
+                        <span class="comment">Deixe seu comentário - opcional</span>
+                        <textarea formControlName="rankComment" id="comment" name="comment" rows="8 " cols="30"></textarea>
+                    </div>
+                    <button [disabled]="RankForm.invalid || RankForm.disabled" class="button-primary btn" id="commenttButton " name="commenttButton" value="commenttButton" type="submit">Enviar</button>
+                    <div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+                        <mat-spinner mode="indeterminate"></mat-spinner>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>

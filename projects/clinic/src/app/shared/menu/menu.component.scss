@@ -1,0 +1,176 @@
+.container {
+    padding: 1rem 4rem;
+    background-color: #f9f9f9;
+}
+
+.link-menu {
+    color: #7e1177;
+    background: none;
+    border: none;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+span {
+    color: #7e1177;
+}
+
+a {
+    position: relative;
+}
+
+.btn {
+    font-size: 12px;
+    padding: 1rem;
+    margin: 0;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #7e1177;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    align-items: center;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.divider {
+    margin: 0 1rem;
+}
+
+.containerPage {
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #f9f9f9;
+}
+
+.material-icons {
+    font-size: 32px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.close {
+    display: block;
+    transition: 0.2s ease-in-out;
+    z-index: 999;
+    position: absolute;
+    right: 0px;
+}
+
+.open {
+    display: none;
+}
+
+@media (max-width:880px) {
+    .logo {
+        display: none;
+    }
+    .container {
+        padding: 2rem;
+    }
+    .logo-mobile {
+        display: flex;
+        justify-content: center;
+    }
+    .menu {
+        z-index: 9999;
+        padding: 6rem 0;
+        display: block;
+        position: fixed;
+        right: -65%;
+        top: 0px;
+        width: 60%;
+        height: 100vh;
+        background-color: #f9f9f9;
+        transition: 0.4s ease-in-out;
+    }
+    .lista {
+        padding: 2rem 1rem;
+        display: block;
+    }
+    .divider {
+        display: none;
+    }
+    li {
+        display: block;
+        text-align: left;
+        margin: 0;
+        padding: 1rem 0;
+        font-size: 14px;
+        border-bottom: 1px solid #3c0d44;
+    }
+    .menu-icon {
+        color: #3c0d44;
+        position: relative;
+        right: 0;
+        top: -8px;
+        display: block;
+        font-size: 32px;
+    }
+    .menuClass {
+        right: 0;
+        box-shadow: 0px 0px 12px #7e7e7e;
+    }
+    .closeMenu {
+        display: block;
+        position: fixed;
+        right: 60%;
+        top: 0px;
+        width: 60%;
+        height: 100vh;
+    }
+    .menuIconClass {
+        z-index: 999;
+    }
+    .menuIconClass {
+        .close {
+            display: none;
+        }
+        .open {
+            transition: 0.2s ease-in-out;
+            display: block;
+            z-index: 999;
+            position: absolute;
+            right: 0px;
+        }
+    }
+}

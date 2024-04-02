@@ -1,0 +1,28 @@
+<div class="notesAdd">
+    <h1 class="lastNoteInsertedTitle">Últimas notas inseridas</h1>
+    <button class="button-primary add" (click)="addNote()">
+      <span class="noteItemText">Nova anotação</span>
+      <span class="material-symbols-outlined"> add </span>
+    </button>
+</div>
+<section class="notes">
+    <mat-accordion *ngFor="let note of noteList.slice(-4); let i = index">
+        <mat-expansion-panel class="notesAccordion">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="title">
+                    {{note.title}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="text">{{note.text}}</p>
+            <div class="actionsNotes">
+                <button (click)="openEditNote(note.id)" class="delete" mat-button>Editar</button>
+                <button (click)="deleteNote(note.id)" class="delete" mat-button>Apagar</button>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</section>
+
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>

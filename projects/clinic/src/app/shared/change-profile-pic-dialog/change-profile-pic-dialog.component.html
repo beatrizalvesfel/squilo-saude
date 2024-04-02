@@ -1,0 +1,16 @@
+<div mat-dialog-actions>
+    <button class="closeBtn" mat-button (click)="cancel()">X</button>
+</div>
+<div class="exam-form">
+    <h1 class="exam-title">Atualizar foto de perfil</h1>
+
+    <div class="exam-form-row">
+        <label id="examLabelFile" for="examInputFile">Selecione a foto* </label>
+
+        <input #fileInput class="examInputFile" required="true" type="file" (change)="onChange(fileInput)" />
+    </div>
+
+    <div class="exam-btn">
+        <button class="button-primary btn" id="exam-btn" name="exam-btn" (click)="salvarFoto()" value="Enviar">Enviar</button>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="container-page">
+    <div class="container">
+        <div class="topbar">
+            <span class="material-symbols-outlined arrow" [routerLink]="['/main']">
+      chevron_left
+    </span>
+            <h2 class="title">Notificações</h2>
+        </div>
+        <div class="notifications">
+            <div *ngFor="let notification of notificationList; let i = index">
+                <div class="newNotification" *ngIf="notification.type === 'SENT_EXAM'">
+                    <span class="newIconNotification">.</span>
+                    <span class="material-symbols-outlined iconNotification">share_reviews</span
+        >
+        <div class="textNotification">
+          <h3 class="titleNotification">Exame compartilhado com sucesso</h3>
+          <span class="contentNotification"
+            >O exame {{ notification.examName }} foi compartilhado com
+            {{ notification.userName }}.</span
+          >
+        </div>
+        <span
+          class="check"
+          (click)="markExamAsViewedShare(list[i].examID)"
+          >ver</span
+        >
+      </div>
+
+      <div
+        class="newNotification"
+        *ngIf="notification.type === 'RECEIVED_EXAM'"
+      >
+        <span class="newIconNotification">.</span>
+                    <span class="material-symbols-outlined iconNotification">share_reviews</span
+        >
+        <div class="textNotification">
+          <h3 class="titleNotification">Exame recebido</h3>
+          <span class="contentNotification"
+            >O usuário {{ notification.userName }} compartilhou o exame
+            {{ notification.examName }} com você. Clique para conferir</span
+          >
+        </div>
+        <span
+          class="check"
+          (click)="
+            markExamAsViewed(list[i].examID, list[i].receivedFromUSer)
+          "
+          >ver</span
+        >
+      </div>
+
+      <div
+        class="readNotification"
+        *ngIf="notification.type === 'VIEW_SENT_EXAM'"
+      >
+        <span class="readNotificationIcon">.</span>
+                    <span class="material-symbols-outlined readIconNotification">share_reviews</span
+        >
+        <div class="textNotification">
+          <h3 class="readTitleNotification">
+            Exame compartilhado com sucesso
+          </h3>
+          <span class="readContentNotification"
+            >O exame {{ notification.examName }} foi compartilhado com
+            {{ notification.userName }}.</span
+          >
+        </div>
+        <span class="viewedCheck" (click)="sentExamViewed(list[i].examID)"
+          >ver</span
+        >
+      </div>
+
+      <div
+        class="readNotification"
+        *ngIf="notification.type === 'VIEW_RECEIVED_EXAM'"
+      >
+        <span class="readNotificationIcon">.</span>
+                    <span class="material-symbols-outlined readIconNotification">share_reviews</span
+        >
+        <div class="textNotification">
+          <h3 class="readTitleNotification">Exame recebido</h3>
+          <span class="readContentNotification"
+            >O usuário {{ notification.userName }} compartilhou o exame
+            {{ notification.examName }} com você. Clique para conferir</span
+          >
+        </div>
+        <span class="viewedCheck" (click)="receivedExamViewed(list[i].examID, list[i].receivedFromUSer)"
+          >ver</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,87 @@
+<div class="container-page container-page-conteudo">
+    <div class="container">
+        <section class="menuSection">
+            <div class="atestadoDiv">
+                <div class="certificateItem certificateItemSearc">
+                    <label for="certificatesSearch" class="certificatesSearch">
+      <input
+        class="certificatesSearchInput"
+        id="certificatesSearch"
+        type="search"
+        name="certificatesSearch"
+        list="certificatesSearch"
+        placeholder="Procurar atestado/laudo"
+        [(ngModel)]="searchText"
+      />
+      <span class="material-symbols-outlined searchIcon"> search </span>
+    </label>
+                    <ul class="certificatesSearchUl" id="certificatesSearch" *ngIf="searchText != ''">
+                        <li [routerLink]="['/certificateview', f.id]" class="certificatesSearchLi" *ngFor="let f of certificatelist | filter : searchText as folder">
+                            <span>{{ f.certificateName }}</span>
+                            <a class="certificatesSearchLiButton" [routerLink]="['/certificateview', f.id]" routerLink="{{linkCertificate}}">
+Ver certificado
+</a>
+                        </li>
+                        <li class="certificatesSearchLi" *ngIf="(certificatelist | filter : searchText).length < 1">
+                            Nenhum atestado/laudo encontrado
+                        </li>
+                    </ul>
+                </div>
+                <button class="button-primary add" (click)="addCertificate()">
+                  <span class="atestadoItemText">Novo atestado/laudo</span>
+                  <span class="material-symbols-outlined"> add </span>
+                </button>
+            </div>
+        </section>
+
+        <div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+            <mat-spinner mode="indeterminate"></mat-spinner>
+        </div>
+
+
+        <section class="atestados">
+            <h1 class="certificatesTitle">Atestados/Laudos</h1>
+            <cdk-virtual-scroll-viewport #scroller itemSize="10" class="content">
+                <mat-list>
+                    <mat-list-item class="certificates certificatesItem" *ngFor="let list of certificatelist">
+                        <div class="certificatesContent">
+                            <div class="certificatesImgDiv certificatesImgDivlist">
+                                <div class="dateDiv list">
+                                    <span class="lastcertificatesInsertedName">{{ list.certificateName }}</span>
+                                    <span matListItemTitle class="dateText">Período do atestado/laudo:</span>
+                                    <div class="date">
+                                        <span matListItemLine class="certificate-date">
+                                        <b>{{ list.startDate | localDateTime }}</b>
+                                      </span>
+                                        <span class="divider">-</span>
+                                        <span matListItemLine class="certificate-date">
+                                        <b>{{ list.endDate | localDateTime }}</b>
+                                      </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="certificateple icon-button with a menu" class="menucertificatesList">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item [routerLink]="['/certificateview', list.id]">
+                  <mat-icon>subject</mat-icon>
+                  <span>Ver certificado</span>
+                      </button>
+                                <button mat-menu-item (click)="shareCertificate(list.id)">
+                <mat-icon>share</mat-icon>
+                <span>Compartilhar</span>
+              </button>
+                                <button mat-menu-item (click)="deleteCertificate(list.id)">
+                <mat-icon>delete</mat-icon>
+                <span>Excluir</span>
+              </button>
+                            </mat-menu>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </cdk-virtual-scroll-viewport>
+        </section>
+
+    </div>
+</div>

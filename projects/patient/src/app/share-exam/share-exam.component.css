@@ -1,0 +1,22 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 32px;
+  height: 32px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+h3, .action {
+  margin: 0;
+  margin-bottom: 0 !important;
+}

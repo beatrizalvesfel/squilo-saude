@@ -1,0 +1,823 @@
+.container-page-conteudo {
+    background-color: #f9f9f9;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    grid-row-gap: 2rem;
+    grid-column-gap: 1rem;
+}
+
+.menu-content {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    color: #7e1177;
+    cursor: pointer;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.menuContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menuIcon {
+    position: relative;
+    background-color: #3C0D44;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 60%;
+}
+
+.link {
+    margin: 0;
+    height: 100%;
+}
+
+.add {
+    width: 24%;
+}
+
+.menu-img {
+    width: 50%;
+}
+
+.acessoDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.acessoRapido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.menu-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #3C0D44;
+}
+
+.acessoTitle {
+    color: #7e1177;
+    font-weight: bold;
+    margin: 0;
+}
+
+@media (max-width:1100px) {
+    .acessoDiv {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 2rem;
+    }
+    .add {
+        width: 100% !important;
+    }
+}
+
+@media (max-width:868px) {
+    .menu-img {
+        width: 40%;
+    }
+    .menu-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .menu-title {
+        font-size: 16px;
+    }
+    .acessoTitle {
+        font-size: 22px;
+        text-align: center;
+        line-height: 20px;
+    }
+}
+
+.myMonitoring {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.myMonitoringDiv {
+    display: flex;
+    width: 67%;
+    justify-content: space-between;
+}
+
+.pesoDiv,
+.alturaDiv,
+.imcDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: fit-content;
+}
+
+.monitoringDiv {
+    border-radius: 16px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    height: 230px;
+    background: #EDF1F2;
+    cursor: pointer;
+    width: 30%;
+}
+
+.personImg {
+    object-fit: cover;
+    width: 60%;
+}
+
+.examesCadastradosDiv,
+.examesCompartilhadosDiv {
+    background-color: #E8D8E7;
+    position: relative;
+    border-radius: 16px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 230px;
+    width: 48%;
+}
+
+.monitoringItens {
+    display: flex;
+    flex-direction: column;
+}
+
+.examesCadastradosTitle,
+.examesCompartilhadosTitle {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.examesCadastrados,
+.examesCompartilhados {
+    font-weight: bold;
+    font-size: 64px;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.semExamesCadastrados {
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+}
+
+.examesCadastradosIcon,
+.examesCompartilhadosIcon {
+    font-size: 28px;
+    position: absolute;
+    right: 40px;
+    bottom: 16px;
+    color: #3DC900;
+}
+
+.pesoDiv,
+.alturaDiv,
+.imcDiv {
+    margin-bottom: 8px;
+}
+
+.pesoIcon,
+.alturaIcon,
+.imcIcon {
+    color: white;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 16px;
+}
+
+.pesoIcon {
+    background-color: #C92EBF;
+}
+
+.alturaIcon {
+    background-color: #10C9B4;
+}
+
+.imcIcon {
+    background-color: #420A7D;
+}
+
+.peso,
+.altura,
+.imc {
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+    margin: 0;
+    height: 16px;
+}
+
+.pesoDescricao,
+.alturaDescricao,
+.imcDescricao {
+    font-weight: normal;
+    font-size: 10px;
+    color: #859ea7;
+    margin: 0;
+    height: 16px;
+}
+
+.monitoring {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.monitoringItem {
+    align-items: center;
+    display: flex;
+}
+
+.monitoringTitle {
+    margin: 0 0.3rem;
+}
+
+@media (max-width:1000px) {
+    .imgDiv {
+        margin: 0px 0px 1rem 0px;
+    }
+    .monitoring {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+}
+
+@media (max-width:880px) {
+    .myMonitoring {
+        display: flex;
+        flex-direction: column;
+    }
+    .examesCadastradosDiv,
+    .examesCompartilhadosDiv {
+        height: 150px;
+        width: 47%;
+        margin-bottom: 1rem;
+    }
+    .myMonitoringDiv {
+        width: 100%;
+    }
+    .monitoringDiv {
+        height: 150px;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .personImg {
+        object-fit: contain;
+        width: 30%;
+    }
+    .monitoringItens {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 70%;
+    }
+    .pesoDiv,
+    .alturaDiv,
+    .imcDiv {
+        margin-right: 1rem;
+    }
+    .semExamesCadastradosm {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .examesCadastradosTitle {
+        padding: 0;
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width:580px) {
+    .acessoDiv {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 2rem;
+    }
+    .add {
+        width: 100%;
+    }
+    .acessoRapido {
+        flex-direction: column;
+    }
+    .semExamesCadastrados {
+        font-size: 12px;
+    }
+    .examesCadastradosTitle {
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width:480px) {
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+    .menu-title {
+        font-size: 14px;
+        margin-top: 0.5rem;
+    }
+    .acessoTitle {
+        font-size: 22px;
+        margin-bottom: 1rem;
+    }
+    .myMonitoring {
+        margin: 0;
+    }
+    .myMonitoringDiv {
+        flex-direction: column;
+    }
+    .examesCadastradosDiv,
+    .examesCompartilhadosDiv {
+        width: 100%;
+        height: 120px;
+    }
+    .monitoringDiv {
+        height: 120px;
+    }
+    .examesCompartilhados,
+    .examesCadastrados {
+        font-size: 32px;
+        padding: 0;
+    }
+    .examesCompartilhadosTitle,
+    .examesCadastradosTitle {
+        font-size: 18px;
+        line-height: 18px;
+        padding: 0;
+    }
+    .monitoringItens {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    .personImg {
+        display: none;
+    }
+    .pesoDiv,
+    .alturaDiv,
+    .imcDiv {
+        margin: 0;
+        align-items: center;
+    }
+}
+
+@media (max-width:380px) {
+    .peso,
+    .altura,
+    .imc {
+        font-size: 10px;
+        height: 10px;
+    }
+    .pesoDescricao,
+    .alturaDescricao,
+    .imcDescricao {
+        font-size: 8px;
+        height: 10px;
+    }
+}
+
+.container-page-conteudo {
+    background-color: #f9f9f9;
+}
+
+.examsAdd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.examsSearch {
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    padding-left: 16px;
+    border-radius: 12px;
+    max-height: 44px;
+    height: 44px;
+    border: 1px solid #7e1177;
+}
+
+.lastExamsInsertedTitle {
+    color: #7e1177;
+    font-weight: bold;
+    margin: 0;
+}
+
+.examItemSearc {
+    position: relative;
+    width: 40%;
+}
+
+.add {
+    padding: 0px 2%;
+    width: fit-content;
+}
+
+.a {
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+.buttons {
+    width: 80%;
+}
+
+.examsSearchUl {
+    position: absolute;
+    top: 44px;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+.examsSearchLi {
+    background-color: #ececec;
+    padding: 8px;
+    border-bottom: 1px solid #7e1177;
+    display: flex;
+    justify-content: space-between;
+}
+
+.examsSearchLiButton {
+    padding: 0;
+    color: #7e1177;
+    margin: 0;
+    width: fit-content;
+    border-bottom: 1px solid #7e1177;
+}
+
+.examsMenuSection {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lastExamsInsertedSection,
+.examsSection {
+    margin-bottom: 3rem;
+}
+
+.examsDiv {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.examItem {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #7e1177;
+    cursor: pointer;
+}
+
+.lastNoteInsertedTitle {
+    color: #7e1177;
+    font-weight: bold;
+}
+
+.examItemButton {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    background: none;
+}
+
+.examItemText {
+    margin-right: 0.3rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.examItemButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #7e1177;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.dateDiv,
+.examLinkDiv {
+    display: block;
+}
+
+.examItemButton:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.examsSearchInput {
+    padding: 0;
+    border-radius: 0;
+    color: #7e1177;
+}
+
+.examsSearchButton {
+    height: inherit;
+    background: #7e1177;
+    border: none;
+    border-radius: 0 12px 12px 0;
+}
+
+.lastExamsInsertedDiv {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    width: 100%;
+}
+
+.lastExamsInserted {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.lastExamsInsertedLink,
+.examLinkDiv {
+    text-decoration: none;
+    align-items: center;
+    color: #7e1177;
+}
+
+.examLinkDiv {
+    margin-bottom: 0.5rem;
+}
+
+.dateDiv {
+    text-decoration: none;
+    align-items: center;
+    color: #7e1177;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.lastExamsInsertedImg {
+    position: absolute;
+    margin-bottom: 1rem;
+    border-radius: 8%;
+    font-size: 32px;
+    color: #7e1177;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.lastExamsInsertedImgDiv {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.seeExam {
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8%;
+    opacity: 0;
+    transition: opacity .2s linear;
+    background-color: #7e117780;
+    color: #fff;
+    border: none;
+}
+
+.lastExamsInsertedImgDiv:hover {
+    .seeExam {
+        opacity: 1;
+    }
+}
+
+.seeExamText {
+    display: flex;
+    align-items: center;
+}
+
+.lastExamsInsertedName,
+.lastExamsInsertedDate {
+    font-size: 14px;
+}
+
+.lastExamsInsertedLink {
+    margin: 0 0.5rem;
+}
+
+.btn {
+    padding: 0 8% !important;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    height: 44px;
+}
+
+.exams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #7e117780;
+}
+
+.exams:last-child {
+    border-bottom: none;
+}
+
+.examsImg {
+    border-radius: 50%;
+    max-width: 80px;
+}
+
+.examsTitle {
+    margin: 0;
+}
+
+.list {
+    margin-bottom: 0;
+    align-items: initial;
+    margin-left: 0;
+}
+
+.examsContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.examsImgDiv {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.menuExamsList {
+    color: #7e1177 !important;
+}
+
+.examsItem {
+    margin-bottom: 1rem !important;
+}
+
+.dateText,
+.exam-date {
+    font-size: 14px;
+    color: #7e1177 !important;
+}
+
+.content {
+    height: calc(70vh - 150px);
+    overflow: auto;
+}
+
+@media (max-width:1020px) {
+    .container {
+        padding: 4rem 2rem;
+    }
+    .lastExamsInserted {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+    .dateDiv,
+    .examLinkDiv {
+        width: 80%;
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+@media (max-width:680px) {
+    .container {
+        padding: 1rem;
+    }
+    .examsDiv {
+        justify-content: space-between;
+    }
+    .examItemText {
+        font-size: 12px;
+    }
+    .examItemSearc {
+        justify-content: end;
+    }
+    .examItemButton {
+        width: 33%;
+    }
+    .container {
+        padding: 2rem 1rem;
+    }
+    .lastExamsInsertedTitle {
+        font-size: 22px;
+        text-align: center;
+        line-height: 20px;
+    }
+    .lastExamsInserted {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 1rem;
+    }
+    .dateDiv,
+    .examLinkDiv {
+        width: 80%;
+        font-size: 12px;
+    }
+    .btn {
+        font-size: 12px;
+        height: 36px;
+    }
+    .add {
+        width: 40%;
+    }
+    .examsSearch {
+        width: 100%;
+        padding-left: 6px;
+    }
+    .examsSearchInput {
+        width: 100%;
+        font-size: 12px;
+    }
+    .lastExamsInsertedSection {
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width:580px) {
+    .examsAdd {
+        flex-direction: column;
+    }
+    .lastExamsInsertedTitle {
+        font-size: 22px;
+        margin-bottom: 1rem;
+    }
+    .examsDiv {
+        flex-direction: column-reverse;
+    }
+    .add {
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+    .examItemSearc {
+        width: 100%;
+    }
+    .examsContent {
+        align-items: flex-start;
+    }
+    .list {
+        margin: 0;
+        width: 100%;
+        font-size: 12px;
+    }
+    .lastExamsInsertedDiv {
+        flex-direction: column-reverse;
+    }
+}

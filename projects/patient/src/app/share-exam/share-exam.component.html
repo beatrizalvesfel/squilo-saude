@@ -1,0 +1,29 @@
+<section class="shareExam">
+    <div class="topBar">
+        <h3>
+            Compartilhar exame {{examName}}
+        </h3>
+        <div mat-dialog-actions class="action">
+            <button mat-button (click)="cancel()">X</button>
+        </div>
+    </div>
+    <form>
+        <mat-form-field class="example-full-width">
+            <mat-label>Procure o usuário desejado</mat-label>
+            <input type="email" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)='getSelectedUser($event.option.value)'>
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    <img class="img" aria-hidden src="{{option.profilePicture}}" height="25" />
+                    <span> {{option.userName}}</span>
+                    <span> {{option.userEmail}}</span>
+
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <div class="buttons">
+            <button class="button-primary" (click)="link()" aria-label="Copiar link do exame">Copiar link</button>
+            <button [disabled]="disableSaveButton" class="button-primary" (click)="share()" aria-label="Compartilhar exame">{{buttonText}}</button>
+
+        </div>
+    </form>
+</section>

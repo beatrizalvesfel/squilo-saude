@@ -1,0 +1,21 @@
+.container-page {
+    background-color: #f9f9f9;
+    padding: 1rem;
+}
+
+.btn {
+    color: #7e1177;
+}
+
+span {
+    font-size: 28px;
+}
+
+.button-primary {
+    width: fit-content;
+}
+
+.certificate-view-topbar {
+    display: flex;
+    justify-content: space-between;
+}

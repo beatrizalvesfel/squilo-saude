@@ -1,0 +1,402 @@
+.container-page-conteudo {
+    background-color: #f9f9f9;
+}
+
+.examsSearch {
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    padding-left: 16px;
+    border-radius: 12px;
+    max-height: 44px;
+    height: 44px;
+    border: 1px solid #7e1177;
+}
+
+.examItemSearc {
+    position: relative;
+    width: 40%;
+}
+
+.add {
+    padding: 0px 2%;
+    width: fit-content;
+}
+
+.a {
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+.buttons {
+    width: 80%;
+}
+
+.examsSearchUl {
+    position: absolute;
+    top: 44px;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+.examsSearchLi {
+    background-color: #ececec;
+    padding: 8px;
+    border-bottom: 1px solid #7e1177;
+    display: flex;
+    justify-content: space-between;
+}
+
+.examsSearchLiButton {
+    padding: 0;
+    color: #7e1177;
+    margin: 0;
+    width: fit-content;
+    border-bottom: 1px solid #7e1177;
+}
+
+.examsMenuSection {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lastExamsInsertedSection,
+.examsSection {
+    margin-top: 3rem;
+}
+
+.examsDiv {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.examItem {
+    display: flex;
+    align-items: center;
+    color: #7e1177;
+    cursor: pointer;
+}
+
+.examsTitle,
+.lastExamsInsertedTitle {
+    color: #7e1177;
+    font-weight: bold;
+}
+
+.lastExamsInsertedTitle {
+    margin-bottom: 2rem;
+}
+
+.examItemButton {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    background: none;
+}
+
+.examItemText {
+    margin-right: 0.3rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.examItemButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #7e1177;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.dateDiv,
+.examLinkDiv {
+    display: block;
+}
+
+.examItemButton:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.examsSearchInput {
+    padding: 0;
+    border-radius: 0;
+    color: #7e1177;
+}
+
+.examsSearchButton {
+    height: inherit;
+    background: #7e1177;
+    border: none;
+    border-radius: 0 12px 12px 0;
+}
+
+.lastExamsInsertedDiv {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    width: 100%;
+}
+
+.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.lastExamsInserted {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+}
+
+.lastExamsInsertedLink,
+.examLinkDiv {
+    text-decoration: none;
+    align-items: center;
+    color: #7e1177;
+}
+
+.examLinkDiv {
+    margin-bottom: 0.5rem;
+}
+
+.dateDiv {
+    text-decoration: none;
+    align-items: center;
+    color: #7e1177;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.lastExamsInsertedImg {
+    position: absolute;
+    margin-bottom: 1rem;
+    border-radius: 8%;
+    font-size: 32px;
+    color: #7e1177;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.lastExamsInsertedImgDiv {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.seeExam {
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8%;
+    opacity: 0;
+    transition: opacity .2s linear;
+    background-color: #7e117780;
+    color: #fff;
+    border: none;
+}
+
+.seeExamText {
+    display: flex;
+    align-items: center;
+}
+
+.lastExamsInsertedImgDiv:hover {
+    .seeExam {
+        opacity: 1;
+    }
+}
+
+.lastExamsInsertedName,
+.lastExamsInsertedDate {
+    font-size: 14px;
+}
+
+.lastExamsInsertedLink {
+    margin: 0 0.5rem;
+}
+
+.btn {
+    padding: 0 8% !important;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    height: 44px;
+}
+
+.exams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #7e117780;
+}
+
+.exams:last-child {
+    border-bottom: none;
+}
+
+.examsImg {
+    border-radius: 50%;
+    max-width: 80px;
+}
+
+.examsTitle {
+    margin: 0;
+}
+
+.list {
+    margin-bottom: 0;
+    align-items: initial;
+    margin-left: 0;
+}
+
+.examsContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.examsImgDiv {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.menuExamsList {
+    color: #7e1177 !important;
+}
+
+.examsItem {
+    margin-bottom: 1rem !important;
+}
+
+.dateText,
+.exam-date {
+    font-size: 14px;
+    color: #7e1177 !important;
+}
+
+.content {
+    height: calc(70vh - 150px);
+    overflow: auto;
+}
+
+@media (max-width:1020px) {
+    .container {
+        padding: 4rem 2rem;
+    }
+    .lastExamsInsertedDiv {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .lastExamsInserted {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+    .dateDiv,
+    .examLinkDiv {
+        width: 80%;
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+@media (max-width:680px) {
+    .examsDiv {
+        justify-content: space-between;
+    }
+    .examItemText {
+        font-size: 12px;
+    }
+    .examItemSearc {
+        justify-content: end;
+    }
+    .examItemButton {
+        width: 33%;
+    }
+    .container {
+        padding: 2rem 1rem;
+    }
+    .lastExamsInsertedTitle {
+        font-size: 22px;
+        text-align: center;
+        line-height: 20px;
+    }
+    .lastExamsInsertedDiv {
+        grid-template-columns: 1fr;
+    }
+    .lastExamsInserted {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 1rem;
+    }
+    .dateDiv,
+    .examLinkDiv {
+        width: 80%;
+        font-size: 12px;
+    }
+    .btn {
+        font-size: 12px;
+        height: 36px;
+    }
+    .add {
+        width: 40%;
+    }
+    .examsSearch {
+        width: 100%;
+        padding-left: 6px;
+    }
+    .examsSearchInput {
+        width: 100%;
+        font-size: 12px;
+    }
+    .lastExamsInsertedSection {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width:580px) {
+    .examsDiv {
+        flex-direction: column-reverse;
+    }
+    .add {
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+    .examItemSearc {
+        width: 100%;
+    }
+    .examsContent {
+        align-items: flex-start;
+    }
+    .list {
+        margin: 0;
+        width: 100%;
+        font-size: 12px;
+    }
+}

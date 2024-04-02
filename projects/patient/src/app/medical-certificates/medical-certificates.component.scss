@@ -1,0 +1,433 @@
+.container {
+    padding: 2rem 4rem;
+}
+
+.container-page-conteudo {
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.menuTitle {
+    margin-bottom: 0;
+}
+
+.add {
+    padding: 0px 4%;
+    width: fit-content;
+    align-items: center;
+}
+
+.atestadoItemText {
+    margin-right: 0.3px;
+}
+
+.divider {
+    margin: 0 0.2rem;
+}
+
+.atestadoDiv {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menuSection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.container-page-conteudo {
+    background-color: #f9f9f9;
+}
+
+.certificatesSearch {
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    padding-left: 16px;
+    border-radius: 12px;
+    max-height: 44px;
+    height: 44px;
+    border: 1px solid #7e1177;
+}
+
+.certificateItemSearc {
+    position: relative;
+    width: 40%;
+}
+
+.add {
+    padding: 0px 2%;
+    width: fit-content;
+}
+
+.a {
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+.buttons {
+    width: 80%;
+}
+
+.certificatesSearchUl {
+    position: absolute;
+    top: 44px;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+.certificatesSearchLi {
+    background-color: #ececec;
+    padding: 8px;
+    border-bottom: 1px solid #7e1177;
+    display: flex;
+    justify-content: space-between;
+}
+
+.certificatesSearchLiButton {
+    padding: 0;
+    color: #7e1177;
+    margin: 0;
+    width: fit-content;
+    border-bottom: 1px solid #7e1177;
+}
+
+.certificatesMenuSection {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lastcertificatesInsertedSection,
+.certificatesSection {
+    margin-top: 3rem;
+}
+
+.certificatesDiv {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.certificateItem {
+    display: flex;
+    align-items: center;
+    color: #7e1177;
+    cursor: pointer;
+}
+
+.certificatesTitle,
+.lastcertificatesInsertedTitle {
+    color: #7e1177;
+    font-weight: bold;
+}
+
+.lastcertificatesInsertedTitle {
+    margin-bottom: 2rem;
+}
+
+.certificateItemButton {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    background: none;
+}
+
+.certificateItemText {
+    margin-right: 0.3rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.certificateItemButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #7e1177;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.dateDiv,
+.certificateLinkDiv {
+    display: block;
+}
+
+.certificateItemButton:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.certificatesSearchInput {
+    padding: 0;
+    border-radius: 0;
+    color: #7e1177;
+}
+
+.certificatesSearchButton {
+    height: inherit;
+    background: #7e1177;
+    border: none;
+    border-radius: 0 12px 12px 0;
+}
+
+.lastcertificatesInsertedDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    width: 100%;
+}
+
+.lastcertificatesInserted {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lastcertificatesInsertedLink,
+.certificateLinkDiv {
+    text-decoration: none;
+    align-items: center;
+    color: #7e1177;
+}
+
+.certificateLinkDiv {
+    margin-bottom: 0.5rem;
+}
+
+.dateDiv {
+    text-decoration: none;
+    align-items: center;
+    color: #7e1177;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.lastcertificatesInsertedImg {
+    position: relative;
+    width: 130px;
+    margin-bottom: 1rem;
+    border-radius: 8%;
+}
+
+.lastcertificatesInsertedImgDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.seecertificate {
+    position: absolute;
+    width: 130px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8%;
+    opacity: 0;
+    transition: opacity .2s linear;
+    background-color: #7e117780;
+    color: white;
+    border: none;
+}
+
+.seecertificateText {
+    display: flex;
+    align-items: center;
+}
+
+.lastcertificatesInsertedImgDiv:hover {
+    .seecertificate {
+        opacity: 1;
+    }
+}
+
+.lastcertificatesInsertedName,
+.lastcertificatesInsertedDate {
+    font-size: 14px;
+}
+
+.lastcertificatesInsertedLink {
+    margin: 0 0.5rem;
+}
+
+.btn {
+    padding: 0 8% !important;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    height: 44px;
+}
+
+.certificates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #7e117780;
+}
+
+.certificates:last-child {
+    border-bottom: none;
+}
+
+.certificatesImg {
+    border-radius: 50%;
+    max-width: 80px;
+}
+
+.certificatesTitle {
+    margin: 0;
+}
+
+.list {
+    margin-bottom: 0;
+    align-items: initial;
+    margin-left: 0;
+}
+
+.certificatesContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.certificatesImgDiv {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.menucertificatesList {
+    color: #7e1177 !important;
+}
+
+.certificatesItem {
+    margin-bottom: 1rem !important;
+}
+
+.dateText,
+.certificate-date {
+    font-size: 14px;
+    color: #7e1177 !important;
+}
+
+.content {
+    height: calc(70vh - 150px);
+    overflow: auto;
+}
+
+@media (max-width:1020px) {
+    .container {
+        padding: 4rem 2rem;
+    }
+    .lastcertificatesInsertedDiv {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .lastcertificatesInserted {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+    .dateDiv,
+    .certificateLinkDiv {
+        width: 80%;
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+@media (max-width:680px) {
+    .certificatesDiv {
+        justify-content: space-between;
+    }
+    .certificateItemText {
+        font-size: 12px;
+    }
+    .certificateItemSearc {
+        justify-content: end;
+    }
+    .certificateItemButton {
+        width: 33%;
+    }
+    .container {
+        padding: 2rem 1rem;
+    }
+    .lastcertificatesInsertedTitle {
+        font-size: 22px;
+        text-align: center;
+        line-height: 20px;
+    }
+    .lastcertificatesInsertedDiv {
+        grid-template-columns: 1fr;
+    }
+    .lastcertificatesInserted {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 1rem;
+    }
+    .dateDiv,
+    .certificateLinkDiv {
+        width: 80%;
+        font-size: 12px;
+    }
+    .btn {
+        font-size: 12px;
+        height: 36px;
+    }
+    .add {
+        width: 40%;
+    }
+    .certificatesSearch {
+        width: 100%;
+        padding-left: 6px;
+    }
+    .certificatesSearchInput {
+        width: 100%;
+        font-size: 12px;
+    }
+    .lastcertificatesInsertedSection {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width:580px) {
+    .certificatesDiv {
+        flex-direction: column-reverse;
+    }
+    .add {
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+    .certificateItemSearc {
+        width: 100%;
+    }
+    .certificatesContent {
+        align-items: flex-start;
+    }
+    .list {
+        margin: 0;
+        width: 100%;
+        font-size: 12px;
+    }
+}

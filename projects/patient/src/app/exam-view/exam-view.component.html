@@ -1,0 +1,13 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+  <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<body class="container-page">
+  <div class="exam-view-topbar">
+      <button class="btn" routerLink="/main">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <button class="button-primary" (click)="shareExam(examId)">Compartilhar</button>
+  </div>
+  <app-exam-view-pdf></app-exam-view-pdf>
+</body>

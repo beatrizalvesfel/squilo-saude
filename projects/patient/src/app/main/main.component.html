@@ -1,0 +1,101 @@
+<div class="container-page container-page-conteudo">
+    <div class="container">
+        <div class="myMonitoring">
+            <div class="myMonitoringDiv">
+                <div class="examesCadastradosDiv" *ngIf="examsLength">
+                    <h3 class="examesCadastradosTitle">Exames cadastrados</h3>
+                    <h4 class="examesCadastrados">{{examsLength}}</h4>
+                    <span class="material-symbols-outlined examesCadastradosIcon">monitoring</span>
+                </div>
+                <div class="examesCadastradosDiv" *ngIf="!examsLength">
+                    <h3 class="examesCadastradosTitle">Exames cadastrados</h3>
+                    <h4 class="semExamesCadastrados">Você ainda não tem exames cadastrados</h4>
+                    <span class="material-symbols-outlined examesCadastradosIcon">monitoring</span>
+                </div>
+
+                <!-- <div class="examesCompartilhadosDiv" *ngIf="shareExamsLength">
+              <h3 class="examesCompartilhadosTitle">Exames compartilhados</h3>
+              <h4 class="examesCompartilhados">{{shareExamsLength}}</h4>
+              <span class="material-symbols-outlined examesCompartilhadosIcon">monitoring</span>
+          </div> -->
+
+                <div class="examesCompartilhadosDiv">
+                    <h3 class="examesCompartilhadosTitle">Exames compartilhados</h3>
+                    <h4 class="semExamesCadastrados">Estamos trabalhando nisso 🧑‍💻</h4>
+                    <span class="material-symbols-outlined examesCompartilhadosIcon">monitoring</span>
+                </div>
+
+            </div>
+
+            <div class="monitoringDiv" (click)="addMetrics()">
+                <div class="monitoringItens">
+                    <div class="pesoDiv">
+                        <span class="material-symbols-outlined pesoIcon">
+        weight
+        </span>
+                        <h4 class="peso">{{metrics.weight}} Kg</h4>
+                        <h4 class="pesoDescricao">Seu peso</h4>
+                    </div>
+                    <div class="alturaDiv">
+                        <span class="material-symbols-outlined alturaIcon">
+        straighten
+        </span>
+                        <h4 class="altura">{{metrics.height}} m</h4>
+                        <h4 class="alturaDescricao">Sua altura</h4>
+                    </div>
+                    <div class="imcDiv">
+                        <span class="material-symbols-outlined imcIcon">
+      contact_page
+      </span>
+                        <h4 class="imc">{{metrics.imc}} (IMC)</h4>
+                        <h4 class="imcDescricao">{{imcClass}}</h4>
+                    </div>
+                </div>
+                <img class="personImg" src="https://squilo.blob.core.windows.net/squilo-container/body.png" alt="body">
+            </div>
+        </div>
+        <section class="acesso">
+            <div class="acessoRapido">
+                <h1 class="acessoTitle">Acesso rápido</h1>
+            </div>
+            <div class="acessoDiv">
+                <button class="button-primary add" (click)="addExam()" id="btn-add-exam-main">
+          <span class="examItemText">Adicionar exame</span>
+          <span class="material-symbols-outlined"> add </span>
+        </button>
+                <button class="button-primary add" (click)="addNote()" id="btn-add-note-main">
+          <span class="noteItemText">Nova anotação</span>
+          <span class="material-symbols-outlined"> add </span>
+        </button>
+                <button class="button-primary add">Enviar exame para profissional</button>
+                <button class="button-primary add">Enviar exame através de link</button>
+            </div>
+        </section>
+        <section class="lastExamsInsertedSection">
+            <div class="examsAdd">
+                <h1 class="lastExamsInsertedTitle">Últimos exames inseridos</h1>
+            </div>
+            <div class="lastExamsInsertedDiv">
+                <div class="lastExamsInserted" *ngFor="let list of examslist.slice(-4)">
+                    <div class="lastExamsInsertedImgDiv">
+                        <span class="material-symbols-outlined lastExamsInsertedImg">monitor_heart</span>
+                        <button class="seeExam" [routerLink]="['/examview', list.examID]">
+                <span class="seeExamText">
+                  <mat-icon>open_in_new</mat-icon>
+                </span>
+              </button>
+                    </div>
+                    <div class="dateDiv">
+                        <span class="lastExamsInsertedName">{{ list.examName }}</span>
+                        <span class="exam-date"><b>{{ list.date | localDateTime }}</b></span>
+                    </div>
+                    <div class="buttons">
+                        <button class="button-primary btn" target="_blank" (click)="shareExam(list.examID)">Compartilhar</button>
+                        <button class="button-secondary btn" (click)="deleteExam(list.examID)">DELETAR</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <app-last-notes-inserted-section></app-last-notes-inserted-section>
+    </div>
+</div>

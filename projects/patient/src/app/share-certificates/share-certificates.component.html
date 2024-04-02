@@ -1,0 +1,23 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<body class="container-page">
+    <div class="container">
+        <div class="text">
+            <h1 class="title">Você conectado com a sua saúde</h1>
+            <span class="span">Squilo, a plataforma para você armazenar, gerenciar e acessar suas informações de saúde.</span>
+            <button class="button-primary btn" routerLink="/register">Quero ser Squilo</button>
+        </div>
+        <div class="links">
+            <div class="card">
+                <img src="https://squilo.blob.core.windows.net/squilo-container/file.png" alt="folder icon">
+                <ul>
+                    <li *ngFor="let link of certificateUrl; index as i">
+                        <a href="{{link}}" target="_blank">Clique aqui para visualizar o arquivo {{i + 1}} do atestado/laudo <span>{{certificateName}}.</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

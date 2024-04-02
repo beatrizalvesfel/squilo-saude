@@ -1,0 +1,88 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">X</button>
+</div>
+<div class="exam-form">
+    <h1 class="exam-title">Envie seu exame</h1>
+    <form accept-charset="UTF-8" [formGroup]="ExamForm" autocomplete="off" enctype="multipart/form-data" method="post" target="_self">
+        <div class="exam-form-row">
+            <label for="examName">Nome do exame*</label>
+            <input class="examInput" minlength="4" id="examName" name="examName" type="text" formControlName="examName" />
+        </div>
+        <!-- <div class="exam-form-row">
+          <label for="examDescription">Descrição do exame - opcional</label>
+          <input class="examInput" id="examDescription" name="examDescription" type="text" formControlName="examDescription" />
+      </div> -->
+
+        <div class="exam-form-row dateDiv">
+            <label for="date">Data de realização do exame*</label>
+            <input class="examInput" id="date" name="date" type="date" formControlName="date">
+        </div>
+        <!-- <div class="exam-form-row">
+          <label id="examLabelFile" for="examInputFile">Selecione o exame* </label>
+          <input class="examInputFile" multiple accept="image/*, application/pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" id="examFile" name="examFile" required="true" type="file" formControlName="examFile"
+              (change)="onChange($event)" />
+      </div> -->
+
+        <div class="mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <span class="hidden-file">
+                    <input
+                      type="file"
+                      #fileInput
+                      ng2FileSelect
+                      [uploader]="uploader"
+                      (onFileSelected)="onFileSelected($any($event))"
+                      accept="image/*, application/pdf"
+                      id="examFile"
+                      name="examFile"
+                      formControlName="examFile"
+                      multiple
+                    />
+                  </span>
+                                <div class="btn-group" (click)="fileInput.click()">
+                                    <button type="button" class="btn btnAdd">
+        + Adicionar arquivos do exame*
+      </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 mt-5">
+                    <table class="table">
+                        <thead>
+                            <tr class="fileName">
+                                <th class="name">Nome</th>
+                                <th class="action">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of uploader.queue">
+                                <td class="fileName name">
+                                    {{ item?.file?.name }}
+                                </td>
+                                <td class="delete">
+                                    <button type="button" class="btn btn-danger btn-xs btnDelete" (click)="item.remove()">
+        <span class="glyphicon glyphicon-trash"></span>
+        Remover
+      </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="exam-btn">
+            <button [disabled]="ExamForm.invalid || ExamForm.disabled" (click)="sendExam(); btn.disabled = true;" #btn class="button-primary btn" id="exam-btn" name="exam-btn" type="submit" value="Enviar">Enviar</button>
+        </div>
+    </form>
+</div>

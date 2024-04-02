@@ -1,0 +1,377 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+  <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+<div class="container-page">
+  <div class="container">
+    <mat-tab-group>
+      <mat-tab lass="title" label="Cadastro">
+        <div class="update-form">
+          <form (ngSubmit)="onSubmit()" [formGroup]="perfilForm">
+            <div class="form-div">
+              <div class="form-div-content">
+                <label for="fullname">Nome Completo</label>
+                <input
+                  class="input"
+                  id="fullname"
+                  name="fullname"
+                  type="text"
+                  formControlName="fullname"
+                />
+              </div>
+              <div class="form-div-content">
+                <label for="tel">Celular</label>
+                <input
+                  class="input"
+                  id="tel"
+                  name="tel"
+                  type="phone"
+                  formControlName="celular"
+                  [imask]="{ mask: '(00) 00000-0000', lazy: false }"
+                />
+              </div>
+            </div>
+
+            <div class="form-div">
+              <div class="form-div-content">
+                <label for="birthday">Data de nascimento</label
+                ><input
+                  class="input"
+                  id="birthday"
+                  name="birthday"
+                  type="date"
+                  formControlName="dataNascimento"
+                />
+              </div>
+              <div class="form-div-content">
+                <div class="update-user-form-radio">
+                  <label for="sexoB">Sexo biológico</label>
+                  <mat-radio-group
+                    aria-label="Select an option"
+                    id="sexoB"
+                    name="sexoB"
+                    required="false"
+                    formControlName="sexoBiologico"
+                  >
+                    <mat-radio-button
+                      class="sexoB"
+                      value="m"
+                      name="options"
+                      id="m"
+                      autocomplete="off"
+                      >Masculino</mat-radio-button
+                    >
+                    <mat-radio-button
+                      class="sexoB"
+                      value="f"
+                      name="options"
+                      id="f"
+                      autocomplete="off"
+                      >Feminino</mat-radio-button
+                    >
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="form-div">
+              <div class="form-div-content">
+                <label for="cep">CEP</label
+                ><input
+                  class="input"
+                  #buscaCEP
+                  type="text"
+                  name="cep"
+                  id="cep"
+                  (blur)="blur($event)"
+                  formControlName="cep"
+                  required
+                  maxlength="9"
+                  placeholder="00000-000"
+                />
+              </div>
+              <div class="form-div-content">
+                <label for="logradouro"
+                  >Rua / Avenida / Logradouro / Via...</label
+                ><input
+                  class="input"
+                  type="text"
+                  name="logradouro"
+                  id="logradouro"
+                  formControlName="logradouro"
+                />
+              </div>
+            </div>
+            <div class="form-div">
+              <div class="form-div-content">
+                <label for="numero">Número e complemento (se houver)</label
+                ><input
+                  class="input"
+                  type="text"
+                  name="numero"
+                  id="numero"
+                  formControlName="numero"
+                />
+              </div>
+              <div class="form-div-content">
+                <label for="bairro">Bairro</label
+                ><input
+                  class="input"
+                  type="text"
+                  name="bairro"
+                  id="bairro"
+                  formControlName="bairro"
+                />
+              </div>
+            </div>
+            <div class="form-div">
+              <div class="form-div-content">
+                <label for="cidade">Cidade</label
+                ><input
+                  class="input"
+                  type="text"
+                  name="localidade"
+                  id="localidade"
+                  formControlName="localidade"
+                />
+              </div>
+              <div class="form-div-content">
+                <label for="uf">Estado</label
+                ><input
+                  class="input"
+                  type="text"
+                  name="uf"
+                  id="uf"
+                  formControlName="uf"
+                />
+              </div>
+            </div>
+            <div class="form-div" *ngIf="isProfessional">
+              <div class="form-div-content">
+                <label for="Proffissao">Profissão</label>
+                <mat-form-field>
+                  <mat-select
+                    [(value)]="profissaoSelecionada"
+                    formControlName="occupation"
+                  >
+                    <mat-option value="AssSocial">Assistente social</mat-option>
+                    <mat-option value="Dentista">Dentista</mat-option>
+                    <mat-option value="Enfermeiro">Enfermeiro (a)</mat-option>
+                    <mat-option value="Fisioterapeuta"
+                      >Fisioterapeuta</mat-option
+                    >
+                    <mat-option value="Fonoaudiologo"
+                      >Fonoaudiólogo (a)</mat-option
+                    >
+                    <mat-option value="MEDICO">Médico (a)</mat-option>
+                    <mat-option value="Nutricionista">Nutricionista</mat-option>
+                    <mat-option value="Psicologo">Psicólogo (a)</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-div-content">
+                <label for="Especialidade">Especialidade</label>
+                <input
+                  id="Especialidade"
+                  formControlName="expertise"
+                  name="Especialidade"
+                  class="input"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="form-div" *ngIf="isProfessional">
+              <div class="form-div-content">
+                <label for="register">Estado de Atuação</label
+                ><mat-form-field>
+                  <mat-select
+                    [(value)]="estadoSelecionada"
+                    formControlName="stateProfessionalActing"
+                  >
+                    <mat-option value="AC">Acre</mat-option>
+                    <mat-option value="AL">Alagoas</mat-option>
+                    <mat-option value="AP">Amapá</mat-option>
+                    <mat-option value="AM">Amazonas</mat-option>
+                    <mat-option value="BA">Bahia</mat-option>
+                    <mat-option value="CE">Ceará</mat-option>
+                    <mat-option value="DF">Distrito Federal</mat-option>
+                    <mat-option value="ES">Espírito Santo</mat-option>
+                    <mat-option value="GO">Goiás</mat-option>
+                    <mat-option value="MA">Maranhão</mat-option>
+                    <mat-option value="MT">Mato Grosso</mat-option>
+                    <mat-option value="MS">Mato Grosso do Sul</mat-option>
+                    <mat-option value="MG">Minas Gerais</mat-option>
+                    <mat-option value="PA">Pará</mat-option>
+                    <mat-option value="PB">Paraíba</mat-option>
+                    <mat-option value="PR">Paraná</mat-option>
+                    <mat-option value="PE">Pernambuco</mat-option>
+                    <mat-option value="PI">Piauí</mat-option>
+                    <mat-option value="RJ">Rio de Janeiro</mat-option>
+                    <mat-option value="RN">Rio Grande do Norte</mat-option>
+                    <mat-option value="RS">Rio Grande do Sul</mat-option>
+                    <mat-option value="RO">Rondnia</mat-option>
+                    <mat-option value="RR">Roraima</mat-option>
+                    <mat-option value="SC">Santa Catarina</mat-option>
+                    <mat-option value="SP">São Paulo</mat-option>
+                    <mat-option value="SE">Sergipe</mat-option>
+                    <mat-option value="TO">Tocantins</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-div-content">
+                <label for="register">Registro no Conselho</label
+                ><input
+                  id="register"
+                  name="register"
+                  class="input"
+                  type="text"
+                  formControlName="localidade"
+                />
+              </div>
+            </div>
+            <div class="update-btn">
+              <button
+                class="button-primary btn"
+                id="perfilForm"
+                name="submit"
+                type="submit"
+                value="Cadastrar"
+              >
+                Atualizar cadastro
+              </button>
+            </div>
+          </form>
+        </div>
+      </mat-tab>
+      <mat-tab lass="title" label="Minha conta">
+        <form [formGroup]="deleteForm">
+          <h3 class="titleForm">Excluir conta</h3>
+          <div class="form-div">
+            <div class="form-div-content">
+              <label for="email">Email cadastrado</label>
+              <input
+                class="input"
+                id="email"
+                name="email"
+                type="text"
+                formControlName="email"
+                readonly="true"
+              />
+            </div>
+          </div>
+          <div class="update-btn">
+            <button
+              class="button-primary btn"
+              id="deleteAccount"
+              name="deleteAccount"
+              type="button"
+              value="deleteAccount"
+              (click)="askDeleteAccount()"
+            >
+              Excluir conta
+            </button>
+          </div>
+        </form>
+        <form [formGroup]="newPassForm">
+          <h3 class="titleForm">Atualizar senha</h3>
+          <div class="form-div">
+            <div class="form-div-content">
+              <label class="labelSenha"  for="oldPassword">Senha atual</label>
+              <mat-form-field appearance="fill">
+                <input
+                  matInput
+                  [type]="hide ? 'password' : 'text'"
+                  id="oldPassword"
+                  name="oldPassword"
+                  type="password"
+                  required="true"
+                  formControlName="oldPassword"
+                />
+                <button
+                  type="button"
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <label class="labelSenha" for="newPassword">Nova senha</label>
+              <mat-form-field appearance="fill">
+                <input
+                  matInput
+                  [type]="hide2 ? 'password' : 'text'"
+                  id="newPassword"
+                  name="newPassword"
+                  required="true"
+                  type="password"
+                  formControlName="newPassword"
+                />
+                <button
+                  type="button"
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide2 = !hide2"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide2"
+                >
+                  <mat-icon>{{
+                    hide2 ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <label class="labelSenha" for="confirmPassword">Confirme a nova senha</label>
+              <mat-form-field appearance="fill">
+                <input
+                  matInput
+                  [type]="hide2 ? 'password' : 'text'"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  required="true"
+                  type="password"
+                  formControlName="confirmPassword"
+                />
+                <button
+                  type="button"
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide2 = !hide2"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide2"
+                >
+                  <mat-icon>{{
+                    hide2 ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+              <div
+                class="register-form-row labelDiv"
+                *ngIf="passwordMatchError"
+              >
+                <div class="bee-field bee-field-r4c2m3i8">
+                  <label>** As senhas não conferem. Por favor verifique.</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="update-btn">
+            <button
+              class="button-primary btn"
+              id="changePass"
+              name="changePass"
+              type="button"
+              value="changePass"
+              (click)="changePass()"
+            >
+              Atualizar senha
+            </button>
+          </div>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

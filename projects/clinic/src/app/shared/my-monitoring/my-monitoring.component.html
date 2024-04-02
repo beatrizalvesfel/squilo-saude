@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div class="container-page">
+    <div class="tester">
+        <div class="description">
+            <h1 class="title">
+                Olá {{userName}}, agora você é um Squilo Tester
+            </h1>
+            <p>
+                Use a Squilo e nos reporte todos os problemas que você encontrar ou funcionalidades que você gostaria de ver por aqui!
+            </p>
+            <p>
+                Contate-nos pelo email: <b><a class="email" routerLink="/contact" target="_blank">suporte@squilosaude.com.br</a></b>.
+            </p>
+        </div>
+    </div>
+    <div class="monitoring" (click)="addMetrics()">
+        <div class="monitoringItens">
+            <span class="material-symbols-outlined monitoringIcon">
+            monitor_weight
+          </span>
+            <div class="monitoringItem">
+                <span class="monitoringTitle">Peso:</span>
+                <span class="monitoringContent">{{metrics.weight}}</span>
+            </div>
+        </div>
+        <div class="monitoringItens">
+            <span class="material-symbols-outlined monitoringIcon">
+            height
+          </span>
+            <div class="monitoringItem">
+                <span class="monitoringTitle">Altura:</span>
+                <span class="monitoringContent">{{metrics.height}}</span>
+            </div>
+        </div>
+        <div class="monitoringItens">
+            <span class="material-symbols-outlined monitoringIcon">
+            settings_accessibility
+          </span>
+            <div class="monitoringItem">
+                <span class="monitoringTitle">IMC:</span>
+                <span class="monitoringContent">{{metrics.imc}}</span>
+            </div>
+        </div>
+        <div class="monitoringItens">
+            <span class="material-symbols-outlined monitoringIcon">
+            bloodtype
+          </span>
+            <div class="monitoringItem">
+                <span class="monitoringTitle">Tipo sanguíneo:</span>
+                <span class="monitoringContent">{{metrics.bloodType}}</span>
+            </div>
+        </div>
+    </div>
+</div>

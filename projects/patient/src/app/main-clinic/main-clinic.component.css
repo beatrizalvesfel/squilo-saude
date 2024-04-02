@@ -1,0 +1,102 @@
+.container-page-conteudo {
+    background-color: #f9f9f9;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.mainClinicTitle {
+    color: #7e1177;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.pacientesConectadosDiv,
+.profissionaisConectadosDiv,
+.arquivosEnviadosDiv {
+    background-color: #E8D8E7;
+    position: relative;
+    border-radius: 16px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 230px;
+    width: 31%;
+}
+
+.pacientesConectadosTitle,
+.profissionaisConectadosTitle,
+.arquivosEnviadosTitle {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+.pacientesCadastrados,
+.profissionaisCadastrados,
+.arquivosEnviados {
+    font-weight: bold;
+    font-size: 64px;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.semExamesCadastrados {
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+}
+
+.pacientesConectadosIcon,
+.profissionaisConectadosIcon,
+.arquivosEnviadosIcon {
+    font-size: 28px;
+    position: absolute;
+    right: 40px;
+    bottom: 16px;
+    color: #3DC900;
+}
+
+.acessoDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.acessoRapido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.acessoTitle,
+.lastUsersTitle {
+    color: #7e1177;
+    font-weight: bold;
+    margin: 0;
+}
+
+.add {
+    width: 31%;
+}
+
+.pacientItemText,
+.professionalItemText,
+.uploadFileItemText {
+    margin-right: 0.3rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.lastUsers {
+    margin-bottom: 2rem;
+}

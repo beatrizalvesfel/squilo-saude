@@ -1,0 +1,39 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<body class="container-page">
+    <div class="container">
+        <div class="login-img">
+            <img class="img" src="https://squilo.blob.core.windows.net/squilo-container/LOGO NOVA SEM FUNDO.png" alt="esquilo">
+        </div>
+        <div class="login">
+            <h1 class="login-title">Bem vindo à Squilo</h1>
+            <div class="login-form">
+                <form accept-charset="UTF-8" accept-charset="UTF-8" [formGroup]="loginForm" autocomplete="on" enctype="multipart/form-data" method="post" target="_self" class="input">
+                    <div class="login-form-row">
+                        <label for="email">Email</label>
+                        <input autocomplete="email" placeholder="exemplo@email.com" id="email" name="email" required="true" type="email" formControlName="email" class="input" />
+                    </div>
+                    <label for="password">Senha</label>
+                    <mat-form-field appearance="fill">
+                        <input matInput [type]="hide ? 'password' : 'text'" id="password" name="password" required="true" type="password" formControlName="password">
+                        <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+                    </mat-form-field>
+                    <div class="bee-block bee-block-7 bee-paragraph link">
+                        <a routerLink="/forgetpassword">Esqueci minha senha</a>
+                    </div>
+                    <div class="login-btn">
+                        <!-- <button [disabled]="loginForm.invalid || loginForm.disabled" (click)="login(); btn.disabled = true;" #btn class="button-primary btn" id="login-squilo" name="submit" type="submit" value="ENTRAR">ENTRAR</button> -->
+                        <button [disabled]="loginForm.invalid || loginForm.disabled || disableSaveButton" (click)="login()" class="button-primary btn" id="login-squilo" name="submit" type="submit">{{buttonText}}</button>
+                    </div>
+                </form>
+            </div>
+            <div class="bee-block bee-block-7 bee-paragraph">
+                <span class="register">Ainda não tem uma conta? <a routerLink="/register"> Criar conta</a></span>
+            </div>
+        </div>
+    </div>
+</body>

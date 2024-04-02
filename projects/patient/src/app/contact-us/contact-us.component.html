@@ -1,0 +1,37 @@
+<body class="container-page">
+    <div class="container">
+        <div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+            <mat-spinner mode="indeterminate"></mat-spinner>
+        </div>
+        <section class="contactUs">
+            <div class="contactUsText">
+                <span class="contactSpan">Fale Conosco</span>
+                <h2 class="contactUsTitle">Como podemos ajudar?</h2>
+                <span class="contactUsFill">
+                Preencha o formulário e responderemos em breve.📬
+                </span>
+            </div>
+            <div class="contactUsForm">
+                <form accept-charset="UTF-8" (ngSubmit)="onSubmit()" [formGroup]="ContactForm" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+                    <div class="contactFormRow">
+                        <label for="contactName">Seu nome*</label>
+                        <input class="contactInput" id="contactName" name="contactName" type="text" formControlName="contactName" />
+                    </div>
+                    <div class="contactFormRow">
+                        <label for="contactEmail">Seu melhor email*</label>
+                        <input class="contactInput" id="contactEmail" name="contactEmail" type="text" formControlName="contactEmail" placeholder="exemplo@email.com" />
+                    </div>
+                    <div class="contactFormRow">
+                        <label for="contactSubject">Assunto*</label>
+                        <input class="contactInput" id="contactSubject" name="contactSubject" type="text" formControlName="contactSubject" />
+                    </div>
+                    <div class="contactFormRow">
+                        <label for="contactMessage">Mensagem*</label>
+                        <textarea class="contactInput" id="contactMessage" name="contactMessage" formControlName="contactMessage" cols="30" rows="5"></textarea>
+                    </div>
+                    <button class="button-primary btn" id="contactBtn" name="contactBtn" type="submit" value="Enviar">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>

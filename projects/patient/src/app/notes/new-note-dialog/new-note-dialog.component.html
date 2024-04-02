@@ -1,0 +1,22 @@
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">X</button>
+</div>
+<div class="note-form">
+    <h1 class="note-title">Nova anotação</h1>
+    <form accept-charset="UTF-8" accept-charset="UTF-8" [formGroup]="NoteForm" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+        <div class="note-form-row">
+            <label for="title">Título*</label>
+            <input id="input-title-note-dialog" class="noteInput" minlength="2" name="title" type="text" formControlName="title" />
+        </div>
+        <div class="note-form-row">
+            <label for="text">Anotação*</label>
+            <textarea id="input-content-note-dialog" class="noteInput" minlength="5" name="text" formControlName="text" cols="30" rows="5"></textarea>
+        </div>
+        <div class="note-btn">
+            <button [disabled]="NoteForm.invalid || NoteForm.disabled" (click)="newNote(); btn.disabled = true;" #btn class="button-primary btn" id="note-btn" name="note-btn" type="submit" value="Enviar">Enviar</button>
+        </div>
+        <div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+            <mat-spinner mode="indeterminate"></mat-spinner>
+        </div>
+    </form>
+</div>

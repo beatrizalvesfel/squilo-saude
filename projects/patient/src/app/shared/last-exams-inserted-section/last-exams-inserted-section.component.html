@@ -1,0 +1,31 @@
+<section class="lastExamsInsertedSection">
+    <div class="examsAdd">
+        <h1 class="lastExamsInsertedTitle">Últimos exames inseridos</h1>
+        <button class="button-primary add" (click)="addExam()">
+  <span class="examItemText">Adicionar exame</span>
+  <span class="material-symbols-outlined"> add </span>
+</button>
+    </div>
+    <div class="lastExamsInsertedDiv">
+        <div class="lastExamsInserted" *ngFor="let list of examslist.slice(-4)">
+            <div class="lastExamsInsertedImgDiv">
+                <span class="material-symbols-outlined lastExamsInsertedImg">monitor_heart</span>
+                <button class="seeExam" [routerLink]="['/examview', list.examID]">
+                  <span class="seeExamText">
+                    <mat-icon>open_in_new</mat-icon>
+                  </span>
+                </button>
+            </div>
+            <div class="dateDiv">
+                <span class="lastExamsInsertedName">{{ list.examName }}</span>
+                <span class="exam-date">
+  <b>{{ list.date | localDateTime }}</b>
+</span>
+            </div>
+            <div class="buttons">
+                <button class="button-primary btn" target="_blank" (click)="shareExam(list.examID)">Compartilhar</button>
+                <button class="button-secondary btn" (click)="deleteExam(list.examID)">DELETAR</button>
+            </div>
+        </div>
+    </div>
+</section>

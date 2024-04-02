@@ -1,0 +1,14 @@
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message {
+  margin: 0;
+}
+
+.action{
+  border: none;
+  background: none;
+}

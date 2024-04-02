@@ -1,0 +1,187 @@
+.mat-dialog-container {
+    background-color: #7e1177 !important;
+}
+
+.certificate-title {
+    color: #f9f9f9;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.mat-dialog-container {
+    background-color: #7e1177 !important;
+}
+
+.certificate-title {
+    color: #f9f9f9;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.enddate {
+    margin-top: 1rem;
+}
+
+.certificate-form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.certificate-form-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+label {
+    color: #f9f9f9;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
+
+.certificateInput {
+    padding-left: 1rem;
+    color: #7e1177;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+input[type="file"] {
+    color: white;
+    padding: 0 16px 0 0;
+    border: 1px solid white;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+}
+
+.addcertificateLabel {
+    padding: 2% 3%;
+    background-color: #f9f9f9;
+    color: #7e1177;
+    display: block;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+}
+
+.certificate-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 100%;
+    padding: 2% 8% !important;
+}
+
+.fileNameDiv {
+    margin-top: 1rem;
+}
+
+.fileName {
+    font-size: 14px;
+}
+
+@media (max-width:880px) {
+    .container {
+        padding: 0rem;
+    }
+    .certificate-form {
+        width: 100%;
+    }
+}
+
+.certificate-form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.certificate-form-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+label {
+    color: #f9f9f9;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
+
+.certificateInput {
+    padding-left: 1rem;
+    color: #7e1177;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+input[type="file"] {
+    color: white;
+    padding: 0 16px 0 0;
+    border: 1px solid white;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+}
+
+.addcertificateLabel {
+    padding: 2% 3%;
+    background-color: #f9f9f9;
+    color: #7e1177;
+    display: block;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+}
+
+.certificate-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 100%;
+    padding: 2% 8% !important;
+}
+
+.fileNameDiv {
+    margin-top: 1rem;
+}
+
+.fileName {
+    font-size: 14px;
+}
+
+@media (max-width:880px) {
+    .container {
+        padding: 0rem;
+    }
+    .certificate-form {
+        width: 100%;
+    }
+}

@@ -1,0 +1,32 @@
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">X</button>
+</div>
+<div class="certificate-form">
+    <h1 class="certificate-title">Envie seu atestado/laudo</h1>
+    <form accept-charset="UTF-8" (ngSubmit)="onSubmit()" [formGroup]="certificateForm" autocomplete="off" enctype="multipart/form-data" method="post" target="_self">
+        <div class="certificate-form-row">
+            <label for="certificateName">Nome do atestado/laudo*</label>
+            <input class="certificateInput" minlength="4" id="certificateName" name="certificateName" type="text" formControlName="certificateName" />
+        </div>
+        <div class="certificate-form-row">
+            <label for="certificateDescription">Descrição do atestado/laudo - opcional</label>
+            <input class="certificateInput" id="certificateDescription" name="certificateDescription" type="text" formControlName="certificateDescription" />
+        </div>
+        <div class="certificate-form-row">
+            <label for="date">Período do atestado/laudo*</label>
+            <input class="certificateInput startdate" placeholder="Data inicial" id="date" name="date" type="date" formControlName="startDate">
+            <input class="certificateInput enddate" placeholder="Data final" id="date" name="date" type="date" formControlName="endDate">
+        </div>
+        <div class="certificate-form-row">
+            <label id="certificateLabelFile" for="certificateInputFile">Selecione o atestado/laudo* </label>
+            <input multiple class="certificateInputFile" accept="image/*, application/pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document " id="certificateFile" name="certificateFile" required="true" type="file"
+                formControlName="certificateFile" (change)="onChange($event)" />
+        </div>
+        <div class="certificate-btn">
+            <button [disabled]="certificateForm.invalid || certificateForm.disabled" class="button-primary btn" id="certificate-btn" name="certificate-btn" type="submit" value="Enviar">Enviar</button>
+        </div>
+        <div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+            <mat-spinner mode="indeterminate"></mat-spinner>
+        </div>
+    </form>
+</div>

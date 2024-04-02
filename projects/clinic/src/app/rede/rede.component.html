@@ -1,0 +1,179 @@
+<div class="container-page container-page-conteudo">
+    <div class="container">
+        <h1 class="networcClinicTitle">Rede</h1>
+
+        <section class="networdList">
+            <div class="networkItem networkItemSearc">
+                <label for="networkSearch" class="networkSearch">
+          <input
+            class="networkSearchInput"
+            id="networkSearch"
+            type="search"
+            name="networkSearch"
+            list="networkSearch"
+            placeholder="Procurar usuário"
+            [(ngModel)]="searchText"
+          />
+          <span class="material-symbols-outlined searchIcon"> search </span>
+        </label>
+                <ul class="networkSearchUl" id="networkSearch" *ngIf="searchText != ''">
+                    <li (click)="networkAdd(f.email)" class="networkSearchLi" *ngFor="let f of redeList | filterNetwork : searchText as folder">
+                        <div class="user" *ngIf="f.profilePicture">
+                            <img src="{{ f.profilePicture.imageUrl }}" alt="" class="imgUser" />
+                            <span class="nomeUser">{{ f.name }}</span>
+                        </div>
+                        <div class="btnDiv" *ngIf="f.connected == false">
+                            <button class="button-primary btnConectar btn" [disabled]="disableNetworkAddButton" (click)="networkAdd(f.email)">
+                {{ buttonText }}
+              </button>
+                        </div>
+                        <div class="btnDiv" *ngIf="f.connected == true">
+                            <button class="button-secondary btnConectado btn">
+                Conectado
+              </button>
+                        </div>
+                    </li>
+                    <li class="networkSearchLi" *ngIf="(redeList | filterNetwork : searchText).length < 1">
+                        Nenhum usuário encontrado
+                    </li>
+                </ul>
+            </div>
+
+            <div class="list">
+                <mat-tab-group>
+                    <mat-tab lass="title" label="Todos">
+                        <table class="tab">
+                            <td class="divNames">
+                                <h3 class="nome">Nome</h3>
+                            </td>
+                            <td class="divEmails">
+                                <h3 class="email">Email</h3>
+                            </td>
+                            <td class="divTelefones">
+                                <h3 class="telefone">Telefone</h3>
+                            </td>
+                            <td class="action"></td>
+
+                            <tr class="rowTab" *ngFor="let list of redeList; let i = index">
+                                <td class="user" *ngIf="list.profilePicture">
+                                    <img src="{{ list.profilePicture.imageUrl }}" alt="" class="imgUser" />
+                                    <span class="nomeUser">{{ list.name }}</span>
+                                </td>
+                                <td class="user" *ngIf="!list.profilePicture">
+                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" class="imgUser" />
+                                    <span class="nomeUser">{{ list.name }}</span>
+                                </td>
+                                <td class="contentTab">
+                                    <span class="emailUser">{{ list.email }}</span>
+                                </td>
+                                <td class="contentTab">
+                                    <span class="telefoneUser">{{ list.phoneNumber }}</span>
+                                </td>
+                                <td class="btnDiv" *ngIf="list.connected == false">
+                                    <button class="button-primary btnConectar" [disabled]="disableNetworkAddButton" (click)="networkAdd(list.email)">
+                    {{ buttonText }}
+                  </button>
+                                </td>
+                                <td class="btnDiv" *ngIf="list.connected == true">
+                                    <button class="button-secondary btnConectado">
+                    Conectado
+                  </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </mat-tab>
+
+                    <mat-tab lass="title" label="Pacientes">
+                        <table class="tab">
+                            <td class="divNames">
+                                <h3 class="nome">Nome</h3>
+                            </td>
+                            <td class="divEmails">
+                                <h3 class="email">Email</h3>
+                            </td>
+                            <td class="divTelefones">
+                                <h3 class="telefone">Telefone</h3>
+                            </td>
+                            <td class="action"></td>
+
+                            <tr class="rowTab" *ngFor="let patientList of redePatientsList; let j = index">
+                                <td class="user" *ngIf="patientList.profilePicture">
+                                    <img src="{{ patientList.profilePicture.imageUrl }}" alt="" class="imgUser" />
+                                    <span class="nomeUser">{{ patientList.name }}</span>
+                                </td>
+                                <td class="user" *ngIf="!patientList.profilePicture">
+                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" class="imgUser" />
+                                    <span class="nomeUser">{{ patientList.name }}</span>
+                                </td>
+                                <td class="contentTab">
+                                    <span class="emailUser">{{ patientList.email }}</span>
+                                </td>
+                                <td class="contentTab">
+                                    <span class="telefoneUser">{{
+                    patientList.phoneNumber
+                  }}</span>
+                                </td>
+                                <td class="btnDiv" *ngIf="patientList.connected == false">
+                                    <button class="button-primary btnConectar" [disabled]="disableNetworkAddButton" (click)="networkAdd(patientList.email)">
+                    {{ buttonText }}
+                  </button>
+                                </td>
+                                <td class="btnDiv" *ngIf="patientList.connected == true">
+                                    <button class="button-secondary btnConectado">
+                    Conectado
+                  </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </mat-tab>
+
+                    <mat-tab lass="title" label="Profissionais">
+                        <table class="tab">
+                            <td class="divNames">
+                                <h3 class="nome">Nome</h3>
+                            </td>
+                            <td class="divEmails">
+                                <h3 class="email">Email</h3>
+                            </td>
+                            <td class="divTelefones">
+                                <h3 class="telefone">Telefone</h3>
+                            </td>
+                            <td class="action"></td>
+                            <tr class="rowTab" *ngFor="
+                  let professionalList of redeProfessionalsList;
+                  let k = index
+                ">
+                                <td class="user" *ngIf="professionalList.profilePicture">
+                                    <img src="{{ professionalList.profilePicture.imageUrl }}" alt="" class="imgUser" />
+                                    <span class="nomeUser">{{ professionalList.name }}</span>
+                                </td>
+                                <td class="user" *ngIf="!professionalList.profilePicture">
+                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" class="imgUser" />
+                                    <span class="nomeUser">{{ professionalList.name }}</span>
+                                </td>
+                                <td class="contentTab">
+                                    <span class="emailUser">{{ professionalList.email }}</span>
+                                </td>
+                                <td class="contentTab">
+                                    <span class="telefoneUser">{{
+                    professionalList.phoneNumber
+                  }}</span>
+                                </td>
+                                <td class="btnDiv" *ngIf="professionalList.connected == false">
+                                    <button class="button-primary btnConectar" [disabled]="disableNetworkAddButton" (click)="networkAdd(professionalList.email)">
+                    {{ buttonText }}
+                  </button>
+                                </td>
+                                <td class="btnDiv" *ngIf="professionalList.connected == true">
+                                    <button class="button-secondary btnConectado">
+                    Conectado
+                  </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </section>
+    </div>
+</div>

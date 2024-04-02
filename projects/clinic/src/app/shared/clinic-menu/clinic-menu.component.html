@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div class="container-page-mobile" [class.menuClass]="menuVariable">
+    <div class="container-user">
+        <div class="user">
+            <div class="menu-icon" [class.menuIconClass]="menuIconVariable" (click)="openMenu()">
+                <img src="https://squilo.blob.core.windows.net/squilo-container/close.svg" alt="" class="close" />
+                <img src="https://squilo.blob.core.windows.net/squilo-container/open.svg" alt="" class="open" />
+            </div>
+            <div class="imgDiv">
+                <img alt="" class="user-image" [src]="imageUrl" />
+                <div class="newImgDiv" (click)="changeProfilePic()">
+                    <span class="material-symbols-outlined icon"> add_a_photo </span>
+                </div>
+            </div>
+            <a routerLink="/notification" #notification="matTooltip" (click)="notification.toggle()" matTooltip="Notificações" aria-label="Notificações">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu"> notifications </span>
+                    <span class="menuItem">Notificações</span>
+                </li>
+            </a>
+            <a routerLink="/updateuser" (click)="perfil.toggle()">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu">person</span>
+                    <span class="menuItem">Perfil</span>
+                </li>
+            </a>
+        </div>
+        <mat-divider></mat-divider>
+        <ul class="menu">
+            <a routerLink="/clinic" #clinic="matTooltip" (click)="clinic.toggle()" matTooltip="Página inicial" aria-label="Página inicial">
+                <div class="menuContent">
+                    <span class="material-symbols-outlined imgMenu">
+                    home
+                    </span>
+                    <!-- <img class="imgMenu" src="https://squilo.blob.core.windows.net/squilo-container/home.svg" alt="Página inicial" /> -->
+                    <span class="menuItem">Página inicial</span>
+                </div>
+            </a>
+            <a routerLink="/network" #network="matTooltip" (click)="network.toggle()" matTooltip="Rede" aria-label="Rede">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu">
+                    hub
+                    </span>
+                    <span class="menuItem">Rede</span>
+                </li>
+            </a>
+            <a routerLink="/send" #send="matTooltip" (click)="send.toggle()" matTooltip="Enviar arquivos" aria-label="Enviar arquivos">
+                <li class="menuContent">
+                    <span class="material-symbols-outoutlined imgMenulined"> send </span>
+                    <span class="menuItem">Enviar arquivos</span>
+                </li>
+            </a>
+            <a routerLink="/uploaded" #uploaded="matTooltip" (click)="uploaded.toggle()" matTooltip="Arquivos enviados" aria-label="Arquivos enviados">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu"> outbox </span>
+
+                    <span class="menuItem">Arquivos enviados</span>
+                </li>
+            </a>
+        </ul>
+        <mat-divider></mat-divider>
+        <div class="footer">
+            <ul class="menu">
+                <a routerLink="/contact" #faleconosco="matTooltip" (click)="faleconosco.toggle()" matTooltip="Fale conosco" aria-label="Fale conosco">
+                    <li class="menuContent">
+                        <span class="material-symbols-outlined imgMenu">mail</span>
+                        <span class="menuItem">Fale conosco</span>
+                    </li>
+                </a>
+                <li class="menuContent" (click)="logout()" #sair="matTooltip" (click)="sair.toggle()" matTooltip="Sair" aria-label="Sair">
+                    <span class="material-symbols-outlined imgMenu"> logout </span>
+                    <span class="menuItem">Sair</span>
+                </li>
+            </ul>
+            <div class="direitos">
+                <img #tooltip="matTooltip" (click)="tooltip.toggle()" matTooltip="Squilo Saúde {{ year }} © Todos os direitos reservados" alt="Squilo Saúde" class="logo-img" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/867242_851373/Squilo%20logo%20completo%20Fundo%20transparente%20editado.png"
+                />
+                <p class="direitos-title">
+                    Squilo Saúde {{ year }} © Todos os direitos reservados
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-page-desktop" [class.menuClassDesktop]="menuVariableDesktop">
+    <div class="container-user">
+        <div class="user">
+            <div class="menu-icon-desktop" [class.menuIconClassDesktop]="menuIconDeskVariable" (click)="closeMenu()">
+                <img src="https://squilo.blob.core.windows.net/squilo-container/close.svg" alt="" class="openDesk" />
+                <img src="https://squilo.blob.core.windows.net/squilo-container/open.svg" alt="" class="closeDesk" />
+            </div>
+            <div class="imgDiv">
+                <img alt="" class="user-image" [src]="imageUrl" />
+                <div class="newImgDiv" (click)="changeProfilePic()">
+                    <span class="material-symbols-outlined icon"> add_a_photo </span>
+                </div>
+            </div>
+            <a routerLink="/notification" #notification="matTooltip" (click)="notification.toggle()" matTooltip="Notificações" aria-label="Notificações">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu"> notifications </span>
+                    <span class="menuItem">Notificações</span>
+                </li>
+            </a>
+            <a routerLink="/updateuser" #perfil="matTooltip" (click)="perfil.toggle()" matTooltip="Perfil" aria-label="Perfil">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu">person</span>
+                    <span class="menuItem">Perfil</span>
+                </li>
+            </a>
+        </div>
+        <mat-divider></mat-divider>
+        <ul class="menu">
+            <a routerLink="/clinic" #clinic="matTooltip" (click)="clinic.toggle()" matTooltip="Página inicial" aria-label="Página inicial">
+                <div class="menuContent">
+                    <span class="material-symbols-outlined imgMenu">
+                    home
+                    </span>
+                    <!-- <img class="imgMenu" src="https://squilo.blob.core.windows.net/squilo-container/home.svg" alt="Página inicial" /> -->
+                    <span class="menuItem">Página inicial</span>
+                </div>
+            </a>
+            <a routerLink="/network" #network="matTooltip" (click)="network.toggle()" matTooltip="Rede" aria-label="Rede">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu">
+                    hub
+                    </span>
+                    <span class="menuItem">Rede</span>
+                </li>
+            </a>
+            <a routerLink="/send" #send="matTooltip" (click)="send.toggle()" matTooltip="Enviar arquivos" aria-label="Enviar arquivos">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu"> send </span>
+                    <span class="menuItem">Enviar arquivos</span>
+                </li>
+            </a>
+            <a routerLink="/uploaded" #uploaded="matTooltip" (click)="uploaded.toggle()" matTooltip="Arquivos enviados" aria-label="Arquivos enviados">
+                <li class="menuContent">
+                    <span class="material-symbols-outlined imgMenu"> outbox </span>
+                    <span class="menuItem">Arquivos enviados</span>
+                </li>
+            </a>
+        </ul>
+        <mat-divider></mat-divider>
+        <div class="footer">
+            <ul class="menu">
+                <a routerLink="/contact" #faleconosco="matTooltip" (click)="faleconosco.toggle()" matTooltip="Fale conosco" aria-label="Fale conosco">
+                    <li class="menuContent">
+                        <span class="material-symbols-outlined imgMenu">mail</span>
+                        <span class="menuItem">Fale conosco</span>
+                    </li>
+                </a>
+                <li class="menuContent" (click)="logout()" #sair="matTooltip" (click)="sair.toggle()" matTooltip="Sair" aria-label="Sair">
+                    <span class="material-symbols-outlined imgMenu"> logout </span>
+                    <span class="menuItem">Sair</span>
+                </li>
+            </ul>
+            <div class="direitos">
+                <img #tooltip="matTooltip" (click)="tooltip.toggle()" matTooltip="Squilo Saúde {{ year }} © Todos os direitos reservados" alt="Squilo Saúde" class="logo-img" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/867242_851373/Squilo%20logo%20completo%20Fundo%20transparente%20editado.png"
+                />
+                <p class="direitos-title">
+                    Squilo Saúde {{ year }} © Todos os direitos reservados
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

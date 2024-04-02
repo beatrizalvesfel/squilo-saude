@@ -1,0 +1,482 @@
+    /* You can add global styles to this file, and also import other style files */
+
+    @import '~bootstrap/dist/css/bootstrap.css';
+    @import "~@angular/material/prebuilt-themes/purple-green.css";
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+    body {
+        margin: 0;
+        height: 100%;
+        cursor: default;
+        background-color: #f9f9f9;
+    }
+
+    body::selection {
+        color: #f9f9f9;
+        background-color: #7e1177;
+    }
+
+    .mat-form-field-appearance-legacy .mat-form-field-label,
+    .mat-form-field-appearance-legacy .mat-hint {
+        color: #a19f9f;
+    }
+
+    .mat-form-field-label-wrapper {
+        top: -4%;
+        padding: 0;
+    }
+
+    ngb-rating {
+        color: #7e1177;
+        font-size: 56px;
+        height: 56px;
+        align-items: center;
+    }
+
+    pdf-viewer {
+        height: 100vh;
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    @media (max-width:680px) {
+        pdf-viewer {
+            width: 550px;
+        }
+    }
+
+    @media (max-width:480px) {
+        pdf-viewer {
+            height: 100vh;
+            width: 75vw;
+        }
+    }
+
+     :root {
+        --menuUser: 250px;
+        --menuUserClose: 80px;
+    }
+
+    app-user-menu {
+        z-index: 999;
+        position: fixed;
+        height: 100vh;
+    }
+
+    app-main,
+    app-main-clinic,
+    app-update-user,
+    app-exams,
+    app-notes,
+    app-medicines,
+    app-vaccination,
+    app-surgeries,
+    app-medical-certificates,
+    app-prescriptions,
+    app-schedule,
+    app-update-user,
+    app-contact-us,
+    app-exam-view,
+    app-received-exam,
+    app-update-professional-user,
+    app-delete-account-code,
+    app-notification,
+    app-certificate-view-pdf {
+        width: calc(100% - var(--menuUserClose));
+    }
+
+    @media (max-width:780px) {
+        app-main,
+        app-main-clinic,
+        app-update-user,
+        app-exams,
+        app-notes,
+        app-medicines,
+        app-vaccination,
+        app-surgeries,
+        app-medical-certificates,
+        app-prescriptions,
+        app-schedule,
+        app-update-user,
+        app-contact-us,
+        app-exam-view,
+        app-received-exam,
+        app-update-professional-user,
+        app-delete-account-code,
+        app-notification,
+        app-certificate-view-pdf {
+            width: calc(100% - var(--menuUserClose));
+        }
+    }
+
+    app-login,
+    app-register,
+    app-forget-password,
+    app-new-password,
+    app-share-view,
+    app-verification-code,
+    app-welcome {
+        width: 100% !important;
+    }
+
+    @media (max-width:780px) {
+        ngb-rating {
+            font-size: 40px;
+            height: 40px;
+        }
+    }
+
+    input::file-selector-button {
+        padding: 2% 16px;
+        border-radius: 12px 0px 0px 12px;
+        border: none;
+        color: #7e1177;
+        font-size: 16px;
+        font-weight: 500;
+        height: 48px;
+        margin-right: 1rem;
+    }
+
+    table,
+    .table {
+        background: #424242 !important;
+        --bs-table-bg: #424242 !important
+    }
+
+    .fileName,
+    .name,
+    .delet {
+        height: 48px !important;
+        max-height: 48px !important;
+    }
+
+    .name,
+    .action {
+        color: white !important;
+    }
+
+    .container-page {
+        font-family: 'Open sans';
+    }
+
+    .container {
+        padding: 4rem;
+        margin: 0 auto;
+        max-width: 1220px;
+        align-items: center;
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    h1,
+    p {
+        margin: 0
+    }
+
+    ul li a {
+        text-decoration: none
+    }
+
+    .mat-radio-outer-circle {
+        border-color: white;
+        background-color: white;
+        border: 1px solid #ccc;
+    }
+
+    .mat-radio-inner-circle {
+        background-color: #7e1177;
+    }
+
+    .mat-input-element {
+        margin-bottom: 0 !important;
+    }
+
+    .mat-form-field-flex {
+        padding: 0 !important;
+    }
+
+    .mat-form-field-underline {
+        display: none;
+    }
+
+    .mat-toolbar-row,
+    .mat-toolbar-single-row {
+        padding: 0 !important;
+    }
+
+    .mat-form-field-infix {
+        color: #7e1177 !important;
+        align-self: center !important;
+        height: 48px !important;
+        display: flex !important;
+        padding: 0 !important;
+        width: 100% !important;
+        /* position: absolute !important;
+        top: 0 !important;
+        left: 0 !important; */
+        border-top: 0.2rem solid transparent !important;
+        align-items: center !important;
+    }
+
+    .mat-date-range-input-separator {
+        color: #7e1177 !important;
+        border-color: #7e1177 !important;
+        align-self: center !important;
+    }
+
+    .mat-date-range-input-container {
+        display: flex !important;
+        align-items: inherit !important;
+    }
+
+    .mat-datepicker-toggle,
+    .mat-datepicker-content,
+    .mat-datepicker-toggle-default-icon {
+        color: #7e1177 !important;
+    }
+
+    .mat-form-field-wrapper {
+        color: #7e1177;
+    }
+
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+        align-self: center;
+    }
+
+    .mat-radio-label-content {
+        margin-right: 14px;
+        font-family: 'Open sans';
+    }
+
+    .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+        border-color: #7e1177;
+    }
+
+    .mat-radio-disabled .mat-radio-outer-circle {
+        border-color: #ffffff80;
+        background: #ffffff80;
+    }
+
+    .mat-radio-button.mat-accent .mat-radio-inner-circle,
+    .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+    .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+    .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+        background-color: #7e1177;
+    }
+
+    .mat-button {
+        background-color: none;
+        font-size: 24px;
+        color: #f9f9f9;
+    }
+
+    .searchIcon {
+        color: #7e1177 !important;
+        padding: 8px;
+    }
+
+    .mat-dialog-container {
+        height: inherit !important
+    }
+
+    .mat-dialog-actions {
+        justify-content: end;
+        margin-bottom: 1rem !important;
+        padding: 0 !important;
+        min-height: fit-content !important;
+    }
+
+    .mat-toolbar {
+        background: #3c0d44;
+    }
+
+    .mat-toolbar-menu {
+        background: #f9f9f9;
+    }
+
+    .button-primary,
+    .button-secondary {
+        font-weight: 600;
+        border-radius: 12px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 1rem 0;
+        transition: ease-out 0.3s;
+        text-align: center;
+        height: 48px;
+        width: 202px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button-primary:hover {
+        color: #f9f9f9;
+        border: 1px solid #660f60;
+        background-color: #660f60;
+    }
+
+    .button-secondary:hover {
+        color: #7e1177;
+        border: 1px solid #7e1177;
+        background-color: #dfdfdf;
+    }
+
+    .button-primary,
+    .button-primary:active {
+        color: #f9f9f9;
+        background: rgb(126, 17, 119);
+        background: -moz-linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+        background: -webkit-linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+        background: linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+        border: 1px solid #7e1177;
+    }
+
+    .button-secondary,
+    .button-secondary:active {
+        color: #7e1177 !important;
+        border: 1px solid #7e1177;
+        background: #dfdfdf !important;
+        transform: scale(0.98) !important;
+    }
+
+    .button-primary:disabled,
+    .button-secondary:disabled {
+        color: #660f60 !important;
+        background: #f9f9f9 !important;
+        transform: scale(0.98) !important;
+        opacity: var(--bs-btn-disabled-opacity);
+    }
+
+    .mat-form-field {
+        width: 100%;
+        max-height: 48px;
+        height: 48px;
+        border-radius: 12px !important;
+        background-color: white !important;
+        margin-top: 0.6rem;
+    }
+
+    .mat-form-field-flex {
+        border: none !important;
+        outline: none !important;
+        padding: 8px 16px !important;
+        max-height: 48px !important;
+        height: 48px !important;
+        border-radius: 12px !important;
+    }
+
+    .mat-select-value-text,
+    .mat-select-arrow {
+        color: black !important;
+    }
+
+    .updateSoonForm {
+        background-color: #EBEEF5;
+        padding: 2rem;
+        border-radius: 12px;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        margin: auto 2px auto 0;
+    }
+
+    input[type=search] {
+        background: none;
+    }
+
+    input {
+        max-height: 48px;
+        height: 48px;
+        color: #7e1177;
+    }
+
+    input:autofill,
+    input:-webkit-autofill {
+        background-color: #e8e8e8 !important;
+    }
+
+    input,
+    textarea {
+        border: none;
+        outline: 0;
+        padding: 8px 16px;
+        border-radius: 12px;
+    }
+
+    label,
+    mat-label {
+        margin-bottom: 0.6rem !important;
+        font-size: 14px !important;
+    }
+
+    .loaderContainer {
+        display: initial;
+        position: relative;
+        z-index: 999999 !important;
+        top: 42%;
+        left: 42%;
+    }
+
+    @media (max-width:580px) {
+        .loaderContainer {
+            top: 50%;
+            left: 40%;
+        }
+    }
+
+    .menuTitle {
+        color: #7e1177;
+        font-weight: bold !important;
+    }
+
+    .menuSection {
+        margin-top: 2rem;
+    }
+
+    .mat-list-base .mat-list-item,
+    .mat-list-base .mat-list-option {
+        height: 100px !important;
+    }
+
+    .mat-list-base .mat-list-item .mat-list-item-content,
+    .mat-list-base .mat-list-option .mat-list-item-content {
+        padding: 0 !important;
+    }
+
+    .mat-tab-label-content {
+        color: black !important;
+    }
+
+    .mat-tab-label-container {
+        margin-bottom: 2rem !important;
+    }
+
+    .mat-expansion-panel {
+        background: rgb(126, 17, 119);
+        background: -moz-linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+        background: -webkit-linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+        background: linear-gradient(145deg, rgba(126, 17, 119, 1) 0%, rgba(6, 17, 118, 1) 100%);
+    }
+
+    ngx-extended-pdf-viewer .html .toolbarField.pageNumber {
+        min-width: 16px;
+        text-align: center;
+        width: 32px;
+        height: 16px;
+    }
+
+    @media (max-width:780px) {
+        .container {
+            padding: 2rem;
+        }
+        .button-primary,
+        .button-secondary {
+            padding: 2% 8%;
+            width: 80%;
+        }
+    }

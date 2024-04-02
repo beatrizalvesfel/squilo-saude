@@ -1,0 +1,135 @@
+.container-page-conteudo {
+    background-color: #f9f9f9;
+}
+
+.networcClinicTitle {
+    color: #7e1177;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.networkSearch {
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    outline: none;
+    padding-left: 16px;
+    border-radius: 12px;
+    max-height: 44px;
+    height: 44px;
+    border: 1px solid #7e1177;
+    width: fit-content;
+}
+
+.networkItemSearc {
+    position: relative;
+    width: 40%;
+}
+
+.networkSearchInput {
+    padding: 0;
+    border-radius: 0;
+    color: #7e1177;
+}
+
+.networkSearchButton {
+    height: inherit;
+    background: #7e1177;
+    border: none;
+    border-radius: 0 12px 12px 0;
+}
+
+.networkSearchUl {
+    position: absolute;
+    top: 44px;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    z-index: 999;
+}
+
+.networkSearchLi {
+    background-color: #ececec;
+    padding: 8px;
+    border-bottom: 1px solid #7e1177;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.networkSearchLiButton {
+    padding: 0;
+    color: #7e1177;
+    margin: 0;
+    width: fit-content;
+    border-bottom: 1px solid #7e1177;
+}
+
+.networkSearchInput {
+    padding: 0;
+    border-radius: 0;
+    color: #7e1177;
+}
+
+.networkSearchButton {
+    height: inherit;
+    background: #7e1177;
+    border: none;
+    border-radius: 0 12px 12px 0;
+}
+
+.tab {
+    background: none!important;
+    width: 100%;
+}
+
+.nome,
+.email,
+.telefone {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rowTab {
+    height: 40px;
+    border-bottom: 1px solid #7e1177;
+}
+
+.user {
+    display: inline-flex;
+    align-items: center;
+}
+
+.imgUser {
+    margin-right: 0.5rem;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.emailUser {
+    text-decoration: underline;
+}
+
+.btnDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.btnConectar {
+    background: #7e1177 !important;
+}
+
+.btnConectado {
+    cursor: default;
+}
+
+.btn {
+    width: fit-content;
+    padding: 1rem;
+    margin: 0;
+}

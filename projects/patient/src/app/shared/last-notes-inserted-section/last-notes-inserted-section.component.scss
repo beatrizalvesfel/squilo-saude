@@ -1,0 +1,208 @@
+.container {
+    padding: 2rem 4rem;
+}
+
+.container-page-conteudo {
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.notes {
+    display: flex;
+    flex-direction: column-reverse;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    width: 100%;
+}
+
+.notesAdd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.menuTitle {
+    margin-bottom: 0;
+}
+
+.content {
+    height: 150px;
+    min-height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, #f9f9f9);
+}
+
+.delete {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+    border: 1px solid #f9f9f9;
+    margin-left: 1rem;
+}
+
+.delete::before {
+    content: "";
+    height: 2px;
+    width: 52px;
+    background-color: #f9f9f9;
+    bottom: -8px;
+    border-radius: 100px;
+    position: absolute;
+    margin-bottom: 0.5rem;
+}
+
+.actionsNotes {
+    display: flex;
+    justify-content: right;
+    margin-top: 1rem;
+}
+
+.text {
+    color: #f9f9f9;
+}
+
+.btn {
+    margin: 0;
+    height: 38px;
+    width: 100%;
+    font-size: 12px;
+}
+
+.mat-card-actions {
+    margin: 0;
+}
+
+.lastNoteInsertedTitle {
+    color: #7e1177;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card {
+    background-color: #3c0d44;
+    text-align: justify;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.389) !important;
+    position: relative;
+    padding: 2rem 1rem;
+    transition: 0.2s ease-in-out;
+}
+
+.title {
+    color: #f9f9f9;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+}
+
+.title::before {
+    content: "";
+    height: 2px;
+    width: 52px;
+    background-color: #f9f9f9;
+    bottom: -9px;
+    border-radius: 100px;
+    position: absolute;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: #8a8a8a;
+}
+
+.header {
+    margin-bottom: 1rem;
+}
+
+.textDiv {
+    font-size: 12px;
+}
+
+.active {
+    transition: 0.2s ease-in-out;
+}
+
+.active .content {
+    height: auto;
+}
+
+.active .content::before {
+    visibility: hidden;
+}
+
+.menuSection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.add {
+    padding: 0px 4%;
+    width: fit-content;
+    align-items: center;
+}
+
+.noteItemText {
+    margin-right: 0.3px;
+}
+
+.notesDiv {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width:680px) {
+    .add {
+        width: fit-content;
+        margin: 0;
+    }
+    .notesDiv {
+        width: 100%;
+    }
+    .lastNoteInsertedTitle {
+        font-size: 22px;
+        text-align: center;
+        line-height: 20px;
+    }
+    .noteItemText {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:580px) {
+    .notesAdd {
+        flex-direction: column;
+    }
+    .notes {
+        grid-template-columns: 1fr;
+    }
+    .add {
+        width: 100%;
+    }
+    .menuSection {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .notesDiv {
+        justify-content: center;
+    }
+    .container {
+        padding: 1rem;
+    }
+    .lastNoteInsertedTitle {
+        font-size: 22px;
+        margin-bottom: 1rem;
+    }
+}

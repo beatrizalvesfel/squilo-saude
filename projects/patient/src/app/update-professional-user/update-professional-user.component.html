@@ -1,0 +1,151 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+<div class="container-page">
+    <div class="container">
+        <div class="updateSoonForm">
+            <div class="update-form">
+                <h1 class="title">Cadastro</h1>
+                <form #f="ngForm" method="get">
+                    <div class="form-div">
+                        <div class="form-div-content">
+                            <label for="fullname">Nome Completo</label
+                          ><input
+              id="fullname"
+              name="fullname"
+              type="text"
+            />
+                </div>
+                <div class="form-div-content">
+                  <label for="birthday">Data de nascimento:</label
+                    ><input
+                      id="birthday"
+                      name="birthday"
+                      type="date"
+                      />
+                  </div>
+                </div>
+              <div class="form-div">
+                <div class="form-div-content">
+                  <label for="Proffissao">Profissão:</label>
+                            <mat-form-field>
+                                <mat-select [(value)]="selected">
+                                    <mat-option value="AssSocial">Assistente social</mat-option>
+                                    <mat-option value="Dentista">Dentista</mat-option>
+                                    <mat-option value="Enfermeiro">Enfermeiro (a)</mat-option>
+                                    <mat-option value="Fisioterapeuta">Fisioterapeuta</mat-option>
+                                    <mat-option value="Fonoaudiologo">Fonoaudiólogo</mat-option>
+                                    <mat-option value="Medico">Médico (a)</mat-option>
+                                    <mat-option value="Nutricionista">Nutricionista</mat-option>
+                                    <mat-option value="Psicologo">Psicólogo (a)</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="form-div-content">
+                            <label for="Proffissao">Especialidade:</label>
+                            <input id="Especialidade" name="Especialidade" type="text">
+                        </div>
+                    </div>
+                    <div class="form-div">
+                        <div class="form-div-content">
+                            <label for="cep">CEP:</label
+              ><input
+              #buscaCEP
+              type="text"
+              name="cep"
+              id="cep"
+              (blur)="blur($event)"
+              ngModel
+              [(ngModel)]="cep"
+              required
+              f
+              maxlength="9" placeholder="00000-000"
+              />
+            </div>
+            <div class="form-div-content">
+                <label for="logradouro">Rua:</label
+                  ><input
+                  type="text"
+                  name="logradouro"
+                  id="logradouro"
+                  ngModel
+                  [(ngModel)]="logradouro"
+                  />
+                </div>
+            </div>
+            <div class="form-div">
+              <div class="form-div-content">
+                  <label for="numero">Número:</label
+                    ><input
+                    type="text"
+                    name="numero"
+                    id="numero"
+                    />
+            </div>
+            <div class="form-div-content">
+              <label for="bairro">Bairro:</label
+                ><input
+                type="text"
+                name="bairro"
+                id="bairro"
+                ngModel
+                [(ngModel)]="bairro"
+                />
+              </div>
+            </div>
+                <div class="form-div">
+                  <div class="form-div-content">
+                    <label for="cidade">Cidade:</label
+                ><input
+                type="text"
+                name="localidade"
+                id="localidade"
+                ngModel
+                [(ngModel)]="localidade"
+                />
+              </div>
+                <div class="form-div-content">
+                  <label for="uf">Estado:</label
+                    ><input
+                type="text"
+                name="uf"
+                id="uf"
+                ngModel
+                        [(ngModel)]="uf"
+                />
+              </div>
+            </div>
+            <div class="form-div">
+              <div class="form-div-content">
+              <label for="register">Registro no Conselho</label
+                ><input
+                  id="register"
+                  name="register"
+                  type="text"
+                  />
+              </div>
+              <div class="form-div-content">
+                <label for="tel">Celular</label
+                  ><input
+                  id="tel"
+                  name="tel"
+                  type="tel"
+                  maxlength="11" placeholder="(00) 00000-0000"
+                  />
+                </div>
+        </div>
+                      <div class="update-user-form-radio">
+                        <label for="visivel">Tornar meu perfil visível para profissionais de saúde:</label>
+                            <mat-radio-group aria-label="Select an option" id="visivel" name="visivel" required="false" formControlName="visivel">
+                                <mat-radio-button class="visivel" value="s" name="options" id="s" autocomplete="off">Sim</mat-radio-button>
+                                <mat-radio-button class="visivel" value="n" name="options" id="n" autocomplete="off">Não</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="update-btn">
+                            <button class="button-primary btn" id="r3c2m6i11" name="submit" type="submit" value="Cadastrar">Atualizar cadastro</button>
+                        </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>

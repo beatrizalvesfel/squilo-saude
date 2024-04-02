@@ -1,0 +1,74 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<body class="container-page">
+    <div class="container">
+        <section class="welcome">
+            <h1 class="welcome-title"> Bem vindo à Squilo</h1>
+            <a routerLink="/login" class="button-primary btn-register">já sou squilo</a>
+        </section>
+        <section class="register">
+            <div class="register-img">
+                <img class="img" src="https://squilo.blob.core.windows.net/squilo-container/LOGO NOVA SEM FUNDO.png" alt="esquilo">
+            </div>
+            <div class="register-form">
+                <h1 class="register-title"> Comece seu cadastro</h1>
+                <form accept-charset="UTF-8" (ngSubmit)="onSubmit()" [formGroup]="registerForm" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+                    <div class="register-form-radio">
+                        <mat-radio-group aria-label="Select an option" formControlName="type">
+                            <mat-radio-button value="Paciente" name="options" id="Paciente" autocomplete="off">Paciente</mat-radio-button>
+                            <mat-radio-button value="Profissional" name="options" id="Profissional" autocomplete="off">Profissional</mat-radio-button>
+                            <mat-radio-button value="CLINICA" name="options" id="Clinica" autocomplete="off">Clínica</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="register-form-row">
+                        <label for="r3c2m6i1">Nome Completo</label>
+                        <input id="r4c2m3i1" name="fullname" required="true" type="text" formControlName="name" />
+                    </div>
+                    <div class="register-form-row">
+                        <label for="r3c2m6i2">Email</label>
+                        <input placeholder="exemplo@email.com" id="r4c2m3i2" name="email" required="true" type="email" formControlName="email" />
+                    </div>
+                    <div class="register-form-row" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors">
+                        <div class="bee-field bee-field-r4c2m3i8">
+                            <label>** Email inválido.</label>
+                        </div>
+                    </div>
+
+                    <div class="register-form-row">
+                        <mat-label for="r3c2m6i3">Senha</mat-label>
+                        <mat-form-field appearance="fill">
+                            <input matInput [type]="hide ? 'password' : 'text'" id="r4c2m3i3" name="pass" type="password" formControlName="password" />
+                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="register-form-row">
+                        <mat-label for="r3c2m6i8">Confirme sua senha</mat-label>
+                        <mat-form-field appearance="fill">
+                            <input matInput [type]="hide2 ? 'password' : 'text'" id="r4c2m3i8" name="confirmPass" required="" type="password" formControlName="confirmPassword" />
+                            <button type="button" mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+                    <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="register-form-row" *ngIf="passwordMatchError">
+                        <div class="bee-field bee-field-r4c2m3i8">
+                            <label>** As senhas não conferem. Por favor verifique.</label>
+                        </div>
+                    </div>
+                    <div class="register-form-row termosDiv">
+                        <input id="r3c2m6i10" name="privacy_policy" required="" type="checkbox" formControlName="termos" />
+                        <label class="termos" for="r3c2m6i10">Concordo com o Termos e
+              Condições e Política de Privacidade</label>
+                    </div>
+                    <button [disabled]="registerForm.invalid || registerForm.disabled || disableSaveButton" class="button-primary btn" id="r3c2m6i11" name="submit" type="submit">{{buttonText}}</button>
+                </form>
+            </div>
+
+        </section>
+
+    </div>
+</body>

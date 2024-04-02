@@ -1,0 +1,105 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<div class="container-page container-page-conteudo">
+    <div class="container">
+        <section class="examsMenuSection">
+            <div class="examsDiv">
+                <div class="examItem examItemSearc">
+                    <label for="examsSearch" class="examsSearch">
+          <input
+            class="examsSearchInput"
+            id="examsSearch"
+            type="search"
+            name="examsSearch"
+            list="examsSearch"
+            placeholder="Procurar exame"
+            [(ngModel)]="searchText"
+          />
+          <span class="material-symbols-outlined searchIcon"> search </span>
+        </label>
+                    <ul class="examsSearchUl" id="examsSearch" *ngIf="searchText != ''">
+                        <li (click)="seeExam(f.examID)" class="examsSearchLi" *ngFor="let f of examslist | filter : searchText as folder">
+                            <span>{{ f.examName }}</span>
+                            <a class="examsSearchLiButton" (click)="seeExam(f.examID)" [routerLink]="['/examview', f.examID]">
+              Ver exame
+            </a>
+                        </li>
+                        <li class="examsSearchLi" *ngIf="(examslist | filter : searchText).length < 1">
+                            Nenhum exame encontrado
+                        </li>
+                    </ul>
+                </div>
+                <button class="button-primary add" (click)="addExam()">
+                <span class="examItemText">Adicionar exame</span>
+                <span class="material-symbols-outlined"> add </span>
+              </button>
+            </div>
+        </section>
+
+        <section class="lastExamsInsertedSection">
+            <h1 class="lastExamsInsertedTitle">Últimos exames inseridos</h1>
+            <div class="lastExamsInsertedDiv">
+                <div class="lastExamsInserted" *ngFor="let list of examslist.slice(-4)">
+                    <div class="lastExamsInsertedImgDiv">
+                        <span class="material-symbols-outlined lastExamsInsertedImg">monitor_heart</span>
+                        <button class="seeExam" [routerLink]="['/examview', list.examID]">
+                      <span class="seeExamText">
+                        <mat-icon>open_in_new</mat-icon>
+                      </span>
+                    </button>
+                    </div>
+                    <div class="dateDiv">
+                        <span class="lastExamsInsertedName">{{ list.examName }}</span>
+                        <span class="exam-date">
+      <b>{{ list.date | localDateTime }}</b>
+    </span>
+                    </div>
+                    <div class="buttons">
+                        <button class="button-primary btn" target="_blank" (click)="shareExam(list.examID)">Compartilhar</button>
+                        <button class="button-secondary btn" (click)="deleteExam(list.examID)">DELETAR</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="examsSection">
+            <h1 class="examsTitle">Exames</h1>
+            <cdk-virtual-scroll-viewport #scroller itemSize="10" class="content">
+                <mat-list class="reverse">
+                    <mat-list-item class="exams examsItem" *ngFor="let list of examslist">
+                        <div class="examsContent">
+                            <div class="examsImgDiv examsImgDivlist">
+                                <div class="dateDiv list">
+                                    <span class="lastExamsInsertedName">{{ list.examName }}</span>
+
+                                    <span matListItemLine class="exam-date">
+                  <b>{{ list.date | localDateTime }}</b>
+                </span>
+                                </div>
+                            </div>
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="menuExamsList">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item [routerLink]="['/examview', list.examID]">
+                  <mat-icon>subject</mat-icon>
+                  <span>Ver exame</span>
+                      </button>
+                                <button mat-menu-item (click)="shareExam(list.examID)">
+                <mat-icon>share</mat-icon>
+                <span>Compartilhar</span>
+              </button>
+                                <button mat-menu-item (click)="deleteExam(list.examID)">
+                <mat-icon>delete</mat-icon>
+                <span>Excluir</span>
+              </button>
+                            </mat-menu>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </cdk-virtual-scroll-viewport>
+        </section>
+    </div>
+</div>

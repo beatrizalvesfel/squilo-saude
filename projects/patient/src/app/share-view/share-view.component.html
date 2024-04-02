@@ -1,0 +1,21 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+  <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<body class="container">
+  <button class="btn" routerLink="/main">
+    <span class="material-symbols-outlined">chevron_left</span>
+  </button>
+  <div class="exam-view-topbar">
+    <div class="text">
+      <h1 class="title">Você está visualizando um exame pela Squilo Saúde</h1>
+      <span class="span">Somos uma plataforma de conexão entre pacientes e profissionais de saúde. <br>
+        Comece a organizar a sua saúde com a Squilo clicando abaixo.</span>
+      <button class="button-primary" routerLink="/register">Cadastre-se na Squilo</button>
+    </div>
+  </div>
+  <app-share-view-pdf [blobUrl]="blobUrl"></app-share-view-pdf>
+  <div *ngIf="examNotFound">
+    <h4>Exame não encontrado</h4>
+  </div>
+</body>

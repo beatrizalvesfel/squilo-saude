@@ -1,0 +1,69 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.update-form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #3c0d44;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.update-user-form-radio {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-div-content {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    margin-bottom: 1rem;
+}
+
+.update-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 100%;
+    padding: 1% 8%;
+    font-size: 14px;
+}
+
+@media (max-width:768px) {
+    label {
+        margin: 0.5rem 0;
+    }
+    .update-form {
+        width: 100%;
+    }
+    .form-div {
+        display: block;
+    }
+    .form-div-content {
+        width: 100%;
+    }
+    .btn {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,24 @@
+<div *ngIf="loaderService.isLoading | async" class="loaderContainer">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">X</button>
+</div>
+<div class="preRegister-form">
+    <h1 class="preRegister-title">Pré-cadastro de profissional</h1>
+    <form accept-charset="UTF-8" [formGroup]="preRegisterForm" autocomplete="off" enctype="multipart/form-data" method="post" target="_self">
+        <div class="preRegister-form-row">
+            <label for="professionalName">Nome do profissional*</label>
+            <input class="preRegisterInput" minlength="4" id="professionalName" name="professionalName" type="text" formControlName="professionalName" />
+        </div>
+        <div class="preRegister-form-row">
+            <label for="professionalEmail">Email do profissional*</label>
+            <input class="preRegisterInput" minlength="4" id="professionalEmail" name="professionalEmail" type="text" formControlName="professionalEmail" />
+        </div>
+
+        <div class="preRegister-btn">
+            <button [disabled]="preRegisterForm.invalid || preRegisterForm.disabled" (click)="sendProfessionalPreRegistration(); btn.disabled = true;" #btn class="button-primary btn" id="preRegister-btn" name="preRegister-btn" type="submit" value="Enviar">Pré-cadastrar</button>
+        </div>
+    </form>
+</div>

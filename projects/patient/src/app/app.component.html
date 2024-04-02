@@ -1,0 +1,6 @@
+<app-menu *ngIf="!isUserLogged"></app-menu>
+<div class="flex">
+    <app-user-menu *ngIf="isUserLogged"></app-user-menu>
+    <router-outlet></router-outlet>
+</div>
+<app-footer *ngIf="!isUserLogged"></app-footer>

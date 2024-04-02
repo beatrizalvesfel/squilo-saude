@@ -1,0 +1,47 @@
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">X</button>
+</div>
+<div class="metrics-form">
+    <form accept-charset="UTF-8" [formGroup]="metricsForm" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+        <div class="metrics-form-row">
+            <label for="weight">Peso (ex.: 69.20)</label>
+            <!-- <input [imask]="{ mask: '000.00', lazy: false }" maxlength="8" class="input" id="weight" name="weight" type="text" formControlName="weight" /> -->
+            <input maxlength="6" class="input" id="weight" name="weight" type="text" formControlName="weight" />
+        </div>
+        <div class="metrics-form-row">
+            <label for="height">Altura (ex.: 1.70)</label>
+            <input [imask]="{ mask: '0.00', lazy: false }" maxlength="6" class="input" id="height" name="height" type="text" formControlName="height" />
+        </div>
+        <div class="metrics-form-row select">
+            <label class="select" for="bloodType">Selecione o seu tipo sanguíneo:</label
+      >
+
+      <mat-form-field>
+        <mat-select formControlName="bloodType">
+          <mat-option value="NEGATIVEA">A-</mat-option>
+          <mat-option value="POSITIVEA">A+</mat-option>
+          <mat-option value="NEGATIVEB">B-</mat-option>
+          <mat-option value="POSITIVEB">B+</mat-option>
+          <mat-option value="NEGATIVEAB">AB-</mat-option>
+          <mat-option value="POSITIVEAB">AB+</mat-option>
+          <mat-option value="NEGATIVEO">O-</mat-option>
+          <mat-option value="POSITIVEO">O+</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+    <div class="update-btn">
+      <button
+        class="button-primary btn"
+        id="metricsForm"
+        name="submit"
+        type="submit"
+        value="Cadastrar"
+        (click)="newMetrics(); btn.disabled = true;"
+        #btn
+      >
+        Cadastrar
+      </button>
+    </div>
+  </form>
+</div>

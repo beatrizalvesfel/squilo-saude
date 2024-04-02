@@ -1,0 +1,107 @@
+<div class="container-page container-page-conteudo">
+    <div class="container">
+        <h1 class="mainClinicTitle">Página inicial</h1>
+
+        <section class="dashboard">
+            <div class="pacientesConectadosDiv" *ngIf="patientsLength">
+                <h3 class="pacientesConectadosTitle">Pacientes conectados</h3>
+                <h4 class="pacientesCadastrados">{{ patientsLength }}</h4>
+                <span class="material-symbols-outlined pacientesConectadosIcon">monitoring</span
+        >
+      </div>
+
+      <div class="pacientesConectadosDiv" *ngIf="!patientsLength">
+        <h3 class="pacientesConectadosTitle">Pacientes conectados</h3>
+        <h4 class="semExamesCadastrados">Estamos trabalhando nisso 🧑‍💻</h4>
+        <span class="material-symbols-outlined pacientesConectadosIcon"
+          >monitoring</span
+        >
+      </div>
+
+      <div class="profissionaisConectadosDiv" *ngIf="professionalsLength">
+        <h3 class="profissionaisConectadosTitle">Profissionais conectados</h3>
+        <h4 class="profissionaisCadastrados">{{ professionalsLength }}</h4>
+        <span class="material-symbols-outlined profissionaisConectadosIcon"
+          >monitoring</span
+        >
+      </div>
+
+      <div class="profissionaisConectadosDiv" *ngIf="!professionalsLength">
+        <h3 class="profissionaisConectadosTitle">Profissionais conectados</h3>
+        <h4 class="semExamesCadastrados">Estamos trabalhando nisso 🧑‍💻</h4>
+        <span class="material-symbols-outlined profissionaisConectadosIcon"
+          >monitoring</span
+        >
+      </div>
+
+      <!-- <div class="arquivosEnviadosDiv" *ngIf="uploadedFilesLength">
+      <h3 class="arquivosEnviadosTitle">Arquivos enviados</h3>
+      <h4 class="arquivosEnviados">{{uploadedFilesLength}}</h4>
+      <span class="material-symbols-outlined examesCompartilhadosIcon">monitoring</span>
+            </div> -->
+
+            <div class="arquivosEnviadosDiv">
+                <h3 class="arquivosEnviadosTitle">Arquivos enviados</h3>
+                <h4 class="semExamesCadastrados">Estamos trabalhando nisso 🧑‍💻</h4>
+                <span class="material-symbols-outlined arquivosEnviadosIcon">monitoring</span
+        >
+      </div>
+    </section>
+    <section class="acesso">
+      <div class="acessoRapido">
+        <h1 class="acessoTitle">Acesso rápido</h1>
+      </div>
+      <div class="acessoDiv">
+        <button class="button-secondary add" (click)="preRegisterPatient()">
+          <span class="pacientItemText">Pré-cadastrar paciente</span>
+                </button>
+                <button class="button-secondary add" (click)="preRegisterProfessional()">
+          <span class="professionalItemText">Pré-cadastrar profissional</span>
+        </button>
+                <button class="button-primary add">
+          <span class="uploadFileItemText">Enviar um arquivo</span>
+        </button>
+            </div>
+        </section>
+        <section class="lastUsers">
+            <h2 class="lastUsersTitle">Últimos usuários adicionados à sua rede</h2>
+            <div class="lastUsersInsertedImgDiv">
+                <table class="tab">
+                    <td class="divNames">
+                        <h3 class="nome">Nome</h3>
+                    </td>
+                    <td class="divEmails">
+                        <h3 class="email">Email</h3>
+                    </td>
+                    <td class="divTelefones">
+                        <h3 class="telefone">Telefone</h3>
+                    </td>
+                    <td class="action"></td>
+                    <tr class="rowTab" *ngFor="let list of redeListConnected; let i = index">
+                        <td class="user" *ngIf="list.profilePicture">
+                            <img src="{{ list.profilePicture.imageUrl }}" alt="" class="imgUser" />
+                            <span class="nomeUser">{{ list.name }}</span>
+                        </td>
+                        <td class="user" *ngIf="!list.profilePicture">
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" class="imgUser" />
+                            <span class="nomeUser">{{ list.name }}</span>
+                        </td>
+                        <td class="contentTab">
+                            <span class="emailUser">{{ list.email }}</span>
+                        </td>
+                        <td class="contentTab">
+                            <span class="telefoneUser">{{ list.phoneNumber }}</span>
+                        </td>
+                        <td class="btnDiv" *ngIf="list.connected == true">
+                            <button class="button-secondary btnConectado">
+                      Conectado
+                    </button>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </div>
+        </section>
+    </div>
+</div>

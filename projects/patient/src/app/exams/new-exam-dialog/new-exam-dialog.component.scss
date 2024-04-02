@@ -1,0 +1,164 @@
+.mat-dialog-container {
+    background-color: #7e1177 !important;
+}
+
+.exam-title {
+    color: #f9f9f9;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.date {
+    padding-left: 0.3rem !important;
+}
+
+.exam-form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.exam-form-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+label {
+    color: #f9f9f9;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
+
+.examInput {
+    padding-left: 1rem;
+    color: #7e1177;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+input[type="file"] {
+    color: white;
+    padding: 0 16px 0 0;
+    border: 1px solid white;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+}
+
+.addExamLabel {
+    padding: 2% 3%;
+    background-color: #f9f9f9;
+    color: #7e1177;
+    display: block;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+}
+
+.exam-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 100%;
+    padding: 2% 8% !important;
+}
+
+.hidden-file {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    border: none;
+    margin: 0;
+    padding: 0
+}
+
+.btnGroup {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.btnAdd {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    color: #f9f9f9;
+    border: 2px dashed #f9f9f9;
+}
+
+.filesView {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.name {
+    width: 80%;
+}
+
+.action {
+    text-align: center;
+}
+
+.delete {
+    justify-content: center;
+    display: flex;
+}
+
+.btnDelete {
+    width: fit-content;
+    padding: 2% 8%!important;
+}
+
+.fileName {
+    font-size: 14px;
+    color: #f9f9f9;
+}
+
+.mt-5 {
+    width: 100%;
+}
+
+.col-sm-9 {
+    padding: 0;
+    width: 100%;
+}
+
+.row {
+    margin: 0;
+}
+
+.col-md-12 {
+    padding: 0;
+}
+
+@media (max-width:880px) {
+    .container {
+        padding: 0rem;
+    }
+    .exam-form {
+        width: 100%;
+    }
+}
